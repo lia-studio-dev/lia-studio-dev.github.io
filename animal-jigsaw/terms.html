@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Animal Jigsaw | LIA Studio</title>
+    <meta name="description" content="Terms of Service for Animal Jigsaw. Non-consumable in-app purchase restoration, fair use, and support policy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #F4F8F6;
+            --surface-card: #FFFFFF;
+            --border-line: #E0EBE6;
+            --text-heading: #112A24;
+            --text-body: #334D46;
+            --text-muted: #6B857E;
+            --accent-sage: #0D9488;
+            --accent-light: #E6F7F5;
+            --shadow-subtle: 0 4px 20px rgba(13, 148, 136, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-body);
+            line-height: 1.75;
+            padding: 2.5rem 1rem;
+        }
+
+        body.lang-ko { font-family: 'Noto Sans KR', 'Plus Jakarta Sans', sans-serif; }
+        body.lang-ja { font-family: 'Noto Sans JP', 'Plus Jakarta Sans', sans-serif; }
+        body.lang-zh { font-family: 'Noto Sans TC', 'Plus Jakarta Sans', sans-serif; }
+
+        .doc-container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--surface-card);
+            border: 1px solid var(--border-line);
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-subtle);
+            overflow: hidden;
+        }
+
+        .doc-header {
+            padding: 1.75rem 2.5rem;
+            background: var(--surface-card);
+            border-bottom: 1px solid var(--border-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-heading);
+            font-weight: 800;
+            font-size: 1.15rem;
+        }
+
+        .brand-link img {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+        }
+
+        .portal-back-link {
+            font-size: 0.825rem;
+            color: var(--accent-sage);
+            font-weight: 700;
+            text-decoration: none;
+            background: var(--accent-light);
+            padding: 0.35rem 0.75rem;
+            border-radius: 9999px;
+            margin-right: 0.5rem;
+        }
+
+        .lang-pills {
+            display: flex;
+            background: #F8FAF9;
+            border: 1px solid var(--border-line);
+            padding: 0.25rem;
+            border-radius: 9999px;
+            gap: 0.2rem;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.35rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--accent-sage);
+            color: #FFFFFF;
+        }
+
+        .doc-body {
+            padding: 3rem 2.5rem 3.5rem;
+        }
+
+        .badge-category {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent-sage);
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.3rem 0.75rem;
+            border-radius: 9999px;
+            margin-bottom: 0.75rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .meta-info {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border-line);
+        }
+
+        section {
+            margin-bottom: 2.25rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 0.85rem;
+            font-size: 0.95rem;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        strong {
+            color: var(--text-heading);
+        }
+
+        .lang-pane {
+            display: none;
+        }
+
+        .lang-pane.active {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.825rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="doc-container">
+        <!-- Header -->
+        <div class="doc-header">
+            <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+                <a href="../index.html" class="portal-back-link">← LIA Studio</a>
+                <a href="index.html" class="brand-link">
+                    <img src="assets/icon.png" alt="Icon">
+                    <span>Animal Jigsaw</span>
+                </a>
+            </div>
+            <div class="lang-pills">
+                <button class="lang-btn active" onclick="switchLang('en')">English</button>
+                <button class="lang-btn" onclick="switchLang('es')">Español</button>
+                <button class="lang-btn" onclick="switchLang('pt')">Português</button>
+                <button class="lang-btn" onclick="switchLang('zh')">繁體中文</button>
+                <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
+                <button class="lang-btn" onclick="switchLang('de')">Deutsch</button>
+                <button class="lang-btn" onclick="switchLang('ko')">한국어</button>
+            </div>
+        </div>
+
+        <!-- Content Body -->
+        <main class="doc-body">
+            <!-- 1. ENGLISH -->
+            <div id="pane-en" class="lang-pane active">
+                <div class="badge-category">Terms & Conditions</div>
+                <h1>Terms of Service</h1>
+                <p class="meta-info">Application: Animal Jigsaw • Studio: LIA Studio • Effective Date: August 2026</p>
+
+                <section>
+                    <h2>1. Overview and Acceptance</h2>
+                    <p>These Terms of Service govern your use of <strong>Animal Jigsaw</strong>, developed and published by <strong>LIA (Luz Interactive Application) / LIA Studio</strong>. By downloading or playing the game, you agree to these terms.</p>
+                </section>
+
+                <section>
+                    <h2>2. Free Content & In-App Purchases</h2>
+                    <p>Animal Jigsaw provides Package 1 (12 full stages) for free. Additional theme packages are sold as non-consumable, permanent unlocks via Google Play In-App Billing.</p>
+                </section>
+
+                <section>
+                    <h2>3. Purchase Restoration Guarantee</h2>
+                    <p>All purchased theme packages are permanently linked to your Google account. You may restore all previous purchases anytime at no cost by tapping the [Restore Purchases] button in the game settings.</p>
+                </section>
+
+                <section>
+                    <h2>4. Intellectual Property</h2>
+                    <p>All artwork, animations, shaders, character designs, sounds, and brand assets within Animal Jigsaw are the exclusive intellectual property of LIA Studio.</p>
+                </section>
+
+                <section>
+                    <h2>5. Support</h2>
+                    <p>For support inquiries, contact: <a href="mailto:holaneuri@gmail.com" style="color:var(--accent-sage); font-weight:700;">holaneuri@gmail.com</a></p>
+                </section>
+            </div>
+
+            <!-- 2. ESPAÑOL -->
+            <div id="pane-es" class="lang-pane">
+                <div class="badge-category">Términos y Condiciones</div>
+                <h1>Términos de Servicio</h1>
+                <p class="meta-info">Aplicación: Animal Jigsaw • Estudio: LIA Studio • Fecha de vigencia: Agosto de 2026</p>
+
+                <section>
+                    <h2>1. Descripción General</h2>
+                    <p>Estos Términos rigen el uso del juego <strong>Animal Jigsaw</strong>, desarrollado por <strong>LIA Studio</strong>.</p>
+                </section>
+
+                <section>
+                    <h2>2. Restauración de Compras</h2>
+                    <p>Todas las compras integradas son permanentes y están vinculadas a su cuenta de Google. Puede restaurarlas gratis en cualquier momento.</p>
+                </section>
+
+                <section>
+                    <h2>3. Soporte</h2>
+                    <p>Contacto: <strong>holaneuri@gmail.com</strong></p>
+                </section>
+            </div>
+
+            <!-- 3. PORTUGUÊS -->
+            <div id="pane-pt" class="lang-pane">
+                <div class="badge-category">Termos e Condições</div>
+                <h1>Termos de Serviço</h1>
+                <p class="meta-info">Aplicativo: Animal Jigsaw • Estúdio: LIA Studio • Data de vigência: Agosto de 2026</p>
+
+                <section>
+                    <h2>1. Visão Geral</h2>
+                    <p>Estes Termos de Serviço regem o uso do aplicativo <strong>Animal Jigsaw</strong>, desenvolvido pela <strong>LIA Studio</strong>.</p>
+                </section>
+
+                <section>
+                    <h2>2. Restauração de Compras</h2>
+                    <p>Todas as compras de pacotes são definitivas e vinculadas à sua conta Google.</p>
+                </section>
+
+                <section>
+                    <h2>3. Suporte ao Usuário</h2>
+                    <p>E-mail: <strong>holaneuri@gmail.com</strong></p>
+                </section>
+            </div>
+
+            <!-- 4. 繁體中文 -->
+            <div id="pane-zh" class="lang-pane">
+                <div class="badge-category">服務條款</div>
+                <h1>服務條款與授權協議</h1>
+                <p class="meta-info">應用名稱：Animal Jigsaw • 開發商：LIA Studio • 生效日期：2026年8月</p>
+
+                <section>
+                    <h2>1. 服務概述</h2>
+                    <p>本條款適用於由 <strong>LIA Studio</strong> 開發並發行的《Animal Jigsaw》遊戲。</p>
+                </section>
+
+                <section>
+                    <h2>2. 永久解鎖與購買恢復</h2>
+                    <p>所有主題包均為一次性永久購買，與您的 Google 帳戶永久綁定，可隨時在設定中免費點擊【恢復購買】。</p>
+                </section>
+
+                <section>
+                    <h2>3. 客服諮詢</h2>
+                    <p>支援信箱：<strong>holaneuri@gmail.com</strong></p>
+                </section>
+            </div>
+
+            <!-- 5. 日本語 -->
+            <div id="pane-ja" class="lang-pane">
+                <div class="badge-category">利用規約</div>
+                <h1>サービス利用規約</h1>
+                <p class="meta-info">アプリ名：Animal Jigsaw • 開発元：LIA Studio • 効力発生日：2026年8月</p>
+
+                <section>
+                    <h2>1. 利用規約への同意</h2>
+                    <p>本規約は、<strong>LIA Studio</strong>が提供する『Animal Jigsaw』の利用条件を定めるものです。</p>
+                </section>
+
+                <section>
+                    <h2>2. 買い切り課金と購入の復元</h2>
+                    <p>追加パックはすべて買い切り型（非消費型）アイテムです。Googleアカウントに紐付いており、いつでも無料で復元可能です。</p>
+                </section>
+
+                <section>
+                    <h2>3. サポート</h2>
+                    <p>お問い合わせ：<strong>holaneuri@gmail.com</strong></p>
+                </section>
+            </div>
+
+            <!-- 6. DEUTSCH -->
+            <div id="pane-de" class="lang-pane">
+                <div class="badge-category">Nutzungsbedingungen</div>
+                <h1>Nutzungsbedingungen</h1>
+                <p class="meta-info">App: Animal Jigsaw • Studio: LIA Studio • Stand: August 2026</p>
+
+                <section>
+                    <h2>1. Übersicht</h2>
+                    <p>Diese Bedingungen regeln die Nutzung von <strong>Animal Jigsaw</strong> durch LIA Studio.</p>
+                </section>
+
+                <section>
+                    <h2>2. Dauerhafter Kauf & Wiederherstellung</h2>
+                    <p>Alle gekauften Pakete sind dauerhaft an Ihr Google-Konto gebunden und können jederzeit kostenlos wiederhergestellt werden.</p>
+                </section>
+
+                <section>
+                    <h2>3. Kundendienst</h2>
+                    <p>Kontakt: <strong>holaneuri@gmail.com</strong></p>
+                </section>
+            </div>
+
+            <!-- 7. 한국어 -->
+            <div id="pane-ko" class="lang-pane">
+                <div class="badge-category">이용 조건 및 정책</div>
+                <h1>서비스 이용약관</h1>
+                <p class="meta-info">앱 명칭: Animal Jigsaw • 개발사: LIA Studio • 효력 발생일: 2026년 8월</p>
+
+                <section>
+                    <h2>1. 서비스 개요 및 약관의 효력</h2>
+                    <p>본 약관은 <strong>LIA (Luz Interactive Application) / LIA Studio</strong>가 제공하는 모바일 퍼즐 게임 <strong>'Animal Jigsaw'</strong>의 이용 조건 및 절차를 규정합니다.</p>
+                </section>
+
+                <section>
+                    <h2>2. 무료 콘텐츠 및 인앱 결제 (IAP)</h2>
+                    <p>Animal Jigsaw는 기본 1개 패키지(12개 스테이지)를 무료로 제공합니다. 추가 테마 패키지는 영구 소장형(비소모성) 인앱결제를 통해 구매할 수 있습니다.</p>
+                </section>
+
+                <section>
+                    <h2>3. 구매 복원(Restore) 보장</h2>
+                    <p>구매하신 모든 테마 패키지는 이용자의 Google 계정에 영구 귀속됩니다. 기기를 변경하거나 앱을 재설치하더라도 인게임 설정 메뉴의 [구매 복원] 버튼을 통해 언제든 무료로 복구됩니다.</p>
+                </section>
+
+                <section>
+                    <h2>4. 지적재산권 보호</h2>
+                    <p>Animal Jigsaw 내의 모든 일러스트, 애니메이션, 셰이더 코드, 캐릭터 디자인, 사운드는 LIA Studio의 고유 지적재산입니다.</p>
+                </section>
+
+                <section>
+                    <h2>5. 고객지원 안내</h2>
+                    <p>문의사항은 아래 고객지원 이메일로 접수해 주시기 바랍니다: <a href="mailto:holaneuri@gmail.com" style="color:var(--accent-sage); font-weight:700;">holaneuri@gmail.com</a></p>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 LIA Studio. All rights reserved.</p>
+    </footer>
+
+    <!-- Tab Switching & Auto Detection -->
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => {
+                const t = b.textContent.trim().toLowerCase();
+                return (lang === 'en' && t.includes('english')) ||
+                       (lang === 'es' && t.includes('español')) ||
+                       (lang === 'pt' && t.includes('português')) ||
+                       (lang === 'zh' && t.includes('繁體中文')) ||
+                       (lang === 'ja' && t.includes('日本語')) ||
+                       (lang === 'de' && t.includes('deutsch')) ||
+                       (lang === 'ko' && t.includes('한국어'));
+            });
+            if (activeBtn) activeBtn.classList.add('active');
+
+            document.querySelectorAll('.lang-pane').forEach(p => p.classList.remove('active'));
+            const targetPane = document.getElementById('pane-' + lang) || document.getElementById('pane-en');
+            if (targetPane) targetPane.classList.add('active');
+
+            document.body.classList.remove('lang-ko', 'lang-ja', 'lang-zh');
+            if (lang === 'ko') document.body.classList.add('lang-ko');
+            else if (lang === 'ja') document.body.classList.add('lang-ja');
+            else if (lang === 'zh') document.body.classList.add('lang-zh');
+
+            localStorage.setItem('lia_game_lang', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const rawLang = (navigator.language || 'en').toLowerCase();
+            let autoLang = 'en';
+            if (rawLang.startsWith('ko')) autoLang = 'ko';
+            else if (rawLang.startsWith('zh')) autoLang = 'zh';
+            else if (rawLang.startsWith('ja')) autoLang = 'ja';
+            else if (rawLang.startsWith('de')) autoLang = 'de';
+            else if (rawLang.startsWith('es')) autoLang = 'es';
+            else if (rawLang.startsWith('pt')) autoLang = 'pt';
+
+            const savedLang = localStorage.getItem('lia_game_lang') || localStorage.getItem('lia_studio_lang') || autoLang;
+            switchLang(savedLang);
+        });
+    </script>
+</body>
+</html>
