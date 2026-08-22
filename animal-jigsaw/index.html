@@ -82,20 +82,26 @@
             z-index: 1;
         }
 
-        /* Top Navigation */
+        /* Navigation */
         nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1.25rem 0;
+            background: rgba(244, 249, 246, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            margin: 0 -1.5rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .nav-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 0 1.25rem;
             flex-wrap: wrap;
             gap: 1rem;
-        }
-
-        .nav-left {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
         }
 
         .back-to-portal {
@@ -115,6 +121,24 @@
         .back-to-portal:hover {
             background: var(--sage-primary);
             color: #FFFFFF;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-left: auto;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-heading);
+            cursor: pointer;
+            padding: 0.25rem;
+            align-items: center;
+            justify-content: center;
         }
 
         .nav-logo {
@@ -164,7 +188,6 @@
             padding: 0.35rem 0.75rem;
             border-radius: 999px;
             backdrop-filter: blur(10px);
-            margin-left: auto;
         }
         
         .lang-icon {
@@ -468,27 +491,28 @@
         }
         /* Mobile Optimization */
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1.25rem 0;
+            .mobile-menu-btn {
+                display: flex;
             }
             .nav-links {
-                width: 100%;
-                overflow-x: auto;
-                flex-wrap: nowrap;
-                justify-content: flex-start;
-                padding-bottom: 0.5rem;
-                -webkit-overflow-scrolling: touch;
-            }
-            .nav-links::-webkit-scrollbar {
                 display: none;
-            }
-            .nav-lang-selector {
-                margin-left: 0;
                 width: 100%;
-                justify-content: center;
-                padding: 0.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 1.5rem 0 0 0;
+                border-top: 1px solid rgba(0, 0, 0, 0.05);
+                margin-top: 1rem;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links a {
+                display: block;
+                width: 100%;
+                text-align: center;
+                background: rgba(13, 148, 136, 0.05);
+                padding: 0.75rem 0;
+                border-radius: 8px;
             }
         }
     </style>
@@ -498,32 +522,43 @@
     <div class="ambient-glow glow-2"></div>
 
     <div class="container">
-        <!-- Top Navigation -->
+        <!-- Top Nav -->
         <nav>
-            <div class="nav-left">
+            <div class="nav-header">
                 <a href="../index.html" class="back-to-portal" data-i18n="nav_back_portal">← LIA Studio Portal</a>
                 <a href="index.html" class="nav-logo">
                     <img src="assets/icon.png" alt="Animal Jigsaw Icon">
                     <span>Animal Jigsaw</span>
                 </a>
+                
+                <div class="nav-actions">
+                    <div class="nav-lang-selector">
+                        <span class="lang-icon">🌐</span>
+                        <select id="langSelect" class="lang-select-box" onchange="setLang(this.value)">
+                            <option value="en">English</option>
+                            <option value="ja">日本語</option>
+                            <option value="de">Deutsch</option>
+                            <option value="ko">한국어</option>
+                            <option value="zh">繁體中文</option>
+                            <option value="es">Español</option>
+                            <option value="pt">Português</option>
+                        </select>
+                    </div>
+                    <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle Menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <div class="nav-links">
-                <a href="#features" data-i18n="nav_features">Features</a>
-                <a href="#packages" data-i18n="nav_packages">5 Packages</a>
-                <a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a>
-                <a href="terms.html" data-i18n="nav_terms">Terms</a>
-            </div>
-            <div class="nav-lang-selector">
-                <span class="lang-icon">🌐</span>
-                <select id="langSelect" class="lang-select-box" onchange="setLang(this.value)">
-                    <option value="en">English</option>
-                    <option value="ja">日本語</option>
-                    <option value="de">Deutsch</option>
-                    <option value="ko">한국어</option>
-                    <option value="zh">繁體中文</option>
-                    <option value="es">Español</option>
-                    <option value="pt">Português</option>
-                </select>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#features" data-i18n="nav_features" onclick="closeMenu()">Features</a>
+                <a href="#packages" data-i18n="nav_packages" onclick="closeMenu()">5 Packages</a>
+                <a href="privacy.html" data-i18n="nav_privacy" onclick="closeMenu()">Privacy Policy</a>
+                <a href="terms.html" data-i18n="nav_terms" onclick="closeMenu()">Terms</a>
             </div>
         </nav>
 
@@ -941,6 +976,18 @@
             if (rawLang.startsWith('pt')) return 'pt';
             
             return 'en';
+        }
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            if (window.innerWidth <= 768) {
+                navLinks.classList.remove('active');
+            }
         }
 
         function setLang(lang) {

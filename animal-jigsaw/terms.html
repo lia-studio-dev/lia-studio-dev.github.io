@@ -435,7 +435,7 @@
             else if (lang === 'ja') document.body.classList.add('lang-ja');
             else if (lang === 'zh') document.body.classList.add('lang-zh');
 
-            localStorage.setItem('lia_game_lang', lang);
+            localStorage.setItem('lia_studio_lang', lang);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -448,7 +448,7 @@
             else if (rawLang.startsWith('es')) autoLang = 'es';
             else if (rawLang.startsWith('pt')) autoLang = 'pt';
 
-            const savedLang = localStorage.getItem('lia_game_lang') || localStorage.getItem('lia_studio_lang') || autoLang;
+            const savedLang = localStorage.getItem('lia_studio_lang') || autoLang;
             switchLang(savedLang);
         });
     </script>
