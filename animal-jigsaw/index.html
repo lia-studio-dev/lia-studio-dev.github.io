@@ -536,10 +536,11 @@
                         <span class="lang-icon">🌐</span>
                         <select id="langSelect" class="lang-select-box" onchange="setLang(this.value)">
                             <option value="en">English</option>
-                            <option value="ja">日本語</option>
-                            <option value="de">Deutsch</option>
                             <option value="ko">한국어</option>
-                            <option value="zh">繁體中文</option>
+                            <option value="ja">日本語</option>
+                            <option value="zh-CN">简体中文</option>
+                            <option value="zh-TW">繁體中文</option>
+                            <option value="de">Deutsch</option>
                             <option value="es">Español</option>
                             <option value="pt">Português</option>
                         </select>
@@ -567,7 +568,7 @@
             <div class="app-badge" data-i18n="hero_badge">✨ The Ultimate Wholesome Puzzle Playground for Kids</div>
             <h1 class="hero-title" data-i18n="hero_title">Joyful Animal Friends &<br><span class="highlight">Magical Jigsaw Adventures!</span></h1>
             <p class="hero-desc" data-i18n="hero_desc">
-                Zero stress and failure-free (No-Fail) design tailored for children aged 3–7. Complete 60 heartwarming storybook puzzles and celebrate with 10-second cinematic video rewards!
+                Zero stress and failure-free (No-Fail) design tailored for children aged 3–6. Choose from 4 difficulty levels (4, 6, 12, 20 pieces) across 60 heartwarming storybook puzzles and celebrate with 10-second cinematic video rewards!
             </p>
             <div class="hero-visual">
                 <img src="assets/icon.png" alt="Animal Jigsaw App Icon" class="main-icon-art">
@@ -593,13 +594,13 @@
             </div>
             <div class="feature-box">
                 <div class="feature-emoji">🧩</div>
-                <h3 class="feature-heading" data-i18n="feat_3_title">3D Embossed Jigsaw Touch</h3>
-                <p class="feature-text" data-i18n="feat_3_desc">Realistic 3D bevel shader, magnetic snapping feedback, and smart Auto-Feed tray for small fingers.</p>
+                <h3 class="feature-heading" data-i18n="feat_3_title">4 Tailored Difficulties (4–20 Pcs)</h3>
+                <p class="feature-text" data-i18n="feat_3_desc">4 pieces (2x2), 6 pieces (3x2), 12 pieces (4x3), and 20 pieces (5x4) with 3D tactile bevel and 3-piece smart auto-feed tray.</p>
             </div>
             <div class="feature-box">
                 <div class="feature-emoji">🔒</div>
-                <h3 class="feature-heading" data-i18n="feat_4_title">Verified Parental Gate</h3>
-                <p class="feature-text" data-i18n="feat_4_desc">4-digit arithmetic gatekeeper protects against accidental child purchases. Peace of mind for parents.</p>
+                <h3 class="feature-heading" data-i18n="feat_4_title">Parental Gate & Full Unlock</h3>
+                <p class="feature-text" data-i18n="feat_4_desc">4-digit arithmetic gatekeeper protects against accidental child purchases. Simple, one-time All-in-One purchase unlocks all packages permanently.</p>
             </div>
         </section>
 
@@ -631,13 +632,13 @@
                 <div class="package-card">
                     <div class="package-img-wrap">
                         <img src="assets/preview_2.png" alt="Exciting Vehicles & Travel">
-                        <div class="package-tag" data-i18n="pkg_paid_tag">Premium Pack</div>
+                        <div class="package-tag" data-i18n="pkg_paid_tag">All-in-One Pack</div>
                     </div>
                     <div class="package-body">
                         <h4 class="package-title" data-i18n="pkg_2_title">🧳 Package 2: Vehicles & Travel Adventure</h4>
                         <p class="package-desc" data-i18n="pkg_2_desc">Airport buses, bullet trains, airplanes above the clouds, and double-decker bus tours.</p>
                         <div class="package-meta">
-                            <span>$0.99 / ₩1,500</span>
+                            <span data-i18n="pkg_meta_paid">All-in-One Full Unlock</span>
                             <span>12 Videos</span>
                         </div>
                     </div>
@@ -647,13 +648,13 @@
                 <div class="package-card">
                     <div class="package-img-wrap">
                         <img src="assets/preview_3.png" alt="Sparkling Fairy Tales">
-                        <div class="package-tag" data-i18n="pkg_paid_tag">Premium Pack</div>
+                        <div class="package-tag" data-i18n="pkg_paid_tag">All-in-One Pack</div>
                     </div>
                     <div class="package-body">
                         <h4 class="package-title" data-i18n="pkg_3_title">🏰 Package 3: Sparkling Fairy Tales</h4>
                         <p class="package-desc" data-i18n="pkg_3_desc">Cinderella's magic carriage, Three Little Pigs, Peter Pan, and Aladdin's flying carpet.</p>
                         <div class="package-meta">
-                            <span>$0.99 / ₩1,500</span>
+                            <span data-i18n="pkg_meta_paid">All-in-One Full Unlock</span>
                             <span>12 Videos</span>
                         </div>
                     </div>
@@ -663,13 +664,13 @@
                 <div class="package-card">
                     <div class="package-img-wrap">
                         <img src="assets/preview_4.png" alt="Cute Baby Dinosaur World">
-                        <div class="package-tag" data-i18n="pkg_paid_tag">Premium Pack</div>
+                        <div class="package-tag" data-i18n="pkg_paid_tag">All-in-One Pack</div>
                     </div>
                     <div class="package-body">
                         <h4 class="package-title" data-i18n="pkg_4_title">🦖 Package 4: Cute Baby Dinosaur World</h4>
                         <p class="package-desc" data-i18n="pkg_4_desc">Baby Brachio, little T-Rex jungle exploration, and Triceratops hide-and-seek.</p>
                         <div class="package-meta">
-                            <span>$0.99 / ₩1,500</span>
+                            <span data-i18n="pkg_meta_paid">All-in-One Full Unlock</span>
                             <span>12 Videos</span>
                         </div>
                     </div>
@@ -679,13 +680,13 @@
                 <div class="package-card">
                     <div class="package-img-wrap">
                         <img src="assets/preview_5.png" alt="Sparkling Space Exploration">
-                        <div class="package-tag" data-i18n="pkg_paid_tag">Premium Pack</div>
+                        <div class="package-tag" data-i18n="pkg_paid_tag">All-in-One Pack</div>
                     </div>
                     <div class="package-body">
                         <h4 class="package-title" data-i18n="pkg_5_title">🚀 Package 5: Sparkling Space Exploration</h4>
                         <p class="package-desc" data-i18n="pkg_5_desc">Milky Way rocket ships, moon jumping, star fishing on the crescent moon, and Saturn rings.</p>
                         <div class="package-meta">
-                            <span>$0.99 / ₩1,500</span>
+                            <span data-i18n="pkg_meta_paid">All-in-One Full Unlock</span>
                             <span>12 Videos</span>
                         </div>
                     </div>
@@ -707,7 +708,7 @@
         </footer>
     </div>
 
-    <!-- 7 Languages Multi-Language i18n Dictionary + Browser Auto-Detection -->
+    <!-- 8 Languages Multi-Language i18n Dictionary + Browser Auto-Detection -->
     <script>
         const i18n = {
             en: {
@@ -720,20 +721,20 @@
                 nav_terms: "Terms of Service",
                 hero_badge: "✨ The Ultimate Wholesome Puzzle Playground for Kids",
                 hero_title: "Joyful Animal Friends &<br><span class=\"highlight\">Magical Jigsaw Adventures!</span>",
-                hero_desc: "Zero stress and failure-free (No-Fail) design tailored for children aged 3–7. Complete 60 heartwarming storybook puzzles and celebrate with 10-second cinematic video rewards!",
+                hero_desc: "Zero stress and failure-free (No-Fail) design tailored for children aged 3–6. Choose from 4 difficulty levels (4, 6, 12, 20 pieces) across 60 heartwarming storybook puzzles and celebrate with 10-second cinematic video rewards!",
                 hero_cta: "Google Play (Coming Soon)",
                 feat_1_title: "100% Ad-Free Clean Space",
                 feat_1_desc: "No annoying banners, popups, or intrusive ads. A safe and focused environment designed for toddlers.",
                 feat_2_title: "10s Cinematic Rewards",
                 feat_2_desc: "Every completed puzzle unlocks a vibrant, fully animated celebration video that brings the story to life.",
-                feat_3_title: "3D Embossed Jigsaw Touch",
-                feat_3_desc: "Realistic 3D bevel shader, magnetic snapping feedback, and smart Auto-Feed tray for small fingers.",
-                feat_4_title: "Verified Parental Gate",
-                feat_4_desc: "4-digit arithmetic gatekeeper protects against accidental child purchases. Peace of mind for parents.",
+                feat_3_title: "4 Tailored Difficulties (4–20 Pcs)",
+                feat_3_desc: "4 pieces (2x2), 6 pieces (3x2), 12 pieces (4x3), and 20 pieces (5x4) with 3D tactile bevel and 3-piece smart auto-feed tray.",
+                feat_4_title: "Parental Gate & Full Unlock",
+                feat_4_desc: "4-digit arithmetic gatekeeper prevents accidental child purchases. Simple, one-time All-in-One purchase unlocks all packages permanently.",
                 pkg_tag: "Theme Lineup",
                 pkg_heading: "5 Epic Themes • 60 Storybook Puzzles",
                 pkg_1_tag: "Free 12 Stages",
-                pkg_paid_tag: "Premium Pack",
+                pkg_paid_tag: "All-in-One Pack",
                 pkg_1_title: "🏡 Package 1: Animal Family Daily Life",
                 pkg_1_desc: "Pancakes with cat family, gardening with Shiba Inu, and cozy camping under the stars.",
                 pkg_2_title: "🧳 Package 2: Vehicles & Travel Adventure",
@@ -744,187 +745,8 @@
                 pkg_4_desc: "Baby Brachio, little T-Rex jungle exploration, and Triceratops hide-and-seek.",
                 pkg_5_title: "🚀 Package 5: Sparkling Space Exploration",
                 pkg_5_desc: "Milky Way rocket ships, moon jumping, star fishing on the crescent moon, and Saturn rings.",
-                pkg_meta_free: "Default Unlocked"
-            },
-            es: {
-                lang_select_title: "Idioma",
-                nav_back_portal: "← LIA Studio",
-                nav_home: "Inicio",
-                nav_features: "Características",
-                nav_packages: "5 Paquetes",
-                nav_privacy: "Privacidad",
-                nav_terms: "Términos",
-                hero_badge: "✨ El Parque de Rompecabezas más Tierno y Seguro",
-                hero_title: "¡Tiernos Animalitos y<br><span class=\"highlight\">Mágicas Aventuras de Puzles!</span>",
-                hero_desc: "Diseño sin estrés ni frustración (No-Fail) para niños de 3 a 7 años. ¡Completa 60 hermosos rompecabezas ilustrados y disfruta de videos animados de recompensa de 10 segundos!",
-                hero_cta: "Google Play (Próximamente)",
-                feat_1_title: "100% Libre de Anuncios",
-                feat_1_desc: "Sin banners ni publicidad invasiva. Un entorno totalmente seguro para el aprendizaje infantil.",
-                feat_2_title: "Videos de Recompensa de 10s",
-                feat_2_desc: "Cada rompecabezas completado desbloquea un video animado lleno de color y alegría.",
-                feat_3_title: "Tacto 3D con Relieve",
-                feat_3_desc: "Efecto 3D realista, ajuste magnético y bandeja inteligente de 3 piezas adaptada para niños.",
-                feat_4_title: "Control Parental Seguro",
-                feat_4_desc: "Desafío aritmético de 4 dígitos para proteger contra compras accidentales por parte de los niños.",
-                pkg_tag: "Colección de Temas",
-                pkg_heading: "5 Grandes Temas • 60 Rompecabezas de Cuento",
-                pkg_1_tag: "12 Fases Gratis",
-                pkg_paid_tag: "Paquete Premium",
-                pkg_1_title: "🏡 Paquete 1: El Día a Día de los Animales",
-                pkg_1_desc: "Desayuno con gatitos, jardinería con Shiba Inu y acampada bajo las estrellas.",
-                pkg_2_title: "🧳 Paquete 2: Viajes y Vehículos Divertidos",
-                pkg_2_desc: "Autobuses de aeropuerto, trenes de alta velocidad, aviones y autobuses turísticos.",
-                pkg_3_title: "🏰 Paquete 3: Cuentos de Hadas Mágicos",
-                pkg_3_desc: "El carruaje de Cenicienta, Los Tres Cerditos, Peter Pan y la alfombra mágica de Aladino.",
-                pkg_4_title: "🦖 Paquete 4: Mundo de Bebés Dinosaurios",
-                pkg_4_desc: "El pequeño Braquiosaurio, expedición con T-Rex y escondite con Triceratops.",
-                pkg_5_title: "🚀 Paquete 5: Exploración Espacial Brillante",
-                pkg_5_desc: "Cohetes espaciales, saltos en la luna, pesca de estrellas y anillos de Saturno.",
-                pkg_meta_free: "Desbloqueado por defecto"
-            },
-            pt: {
-                lang_select_title: "Idioma",
-                nav_back_portal: "← LIA Studio",
-                nav_home: "Início",
-                nav_features: "Recursos",
-                nav_packages: "5 Pacotes",
-                nav_privacy: "Privacidade",
-                nav_terms: "Termos",
-                hero_badge: "✨ O Playground de Quebra-Cabeças Perfeito para Crianças",
-                hero_title: "Amiguinhos Animais &<br><span class=\"highlight\">Aventuras Mágicas de Quebra-Cabeça!</span>",
-                hero_desc: "Desenvolvido sem estresse nem falhas para crianças de 3 a 7 anos. Complete 60 quebra-cabeças ilustrados e comemore com vídeos animados de 10 segundos!",
-                hero_cta: "Google Play (Em Breve)",
-                feat_1_title: "100% Livre de Anúncios",
-                feat_1_desc: "Sem banners ou popups invasivos. Um ambiente limpo e acolhedor para os pequenos.",
-                feat_2_title: "Vídeos de Recompensa de 10s",
-                feat_2_desc: "Cada quebra-cabeça concluído libera uma animação alegre que dá vida aos personagens.",
-                feat_3_title: "Toque 3D com Relevo",
-                feat_3_desc: "Sombra 3D realista, encaixe magnético suave e bandeja adaptada para mãozinhas infantis.",
-                feat_4_title: "Bloqueio Parental Seguro",
-                feat_4_desc: "Desafio de 4 dígitos acessível apenas por adultos para prevenir compras acidentais.",
-                pkg_tag: "Linha de Temas",
-                pkg_heading: "5 Temas Incríveis • 60 Quebra-Cabeças de Conto de Fadas",
-                pkg_1_tag: "12 Fases Grátis",
-                pkg_paid_tag: "Pacote Premium",
-                pkg_1_title: "🏡 Pacote 1: O Dia a Dia da Família Animal",
-                pkg_1_desc: "Panquecas com a família de gatinhos, jardinagem com Shiba Inu e piquenique na praia.",
-                pkg_2_title: "🧳 Pacote 2: Viagens e Veículos Divertidos",
-                pkg_2_desc: "Ônibus de aeroporto, trens-bala, aviões nas nuvens e passeios de ônibus turístico.",
-                pkg_3_title: "🏰 Pacote 3: Contos de Fadas Brilhantes",
-                pkg_3_desc: "A carruagem da Cinderela, Os Três Porquinhos, Peter Pan e o tapete mágico de Aladdin.",
-                pkg_4_title: "🦖 Pacote 4: Mundo dos Bebês Dinossauros",
-                pkg_4_desc: "Bebê Braquiossauro, exploração na selva com T-Rex e esconde-esconde com Triceratops.",
-                pkg_5_title: "🚀 Pacote 5: Exploração Espacial Radiante",
-                pkg_5_desc: "Foguetes espaciais, pulos na lua, pescaria de estrelas e os anéis de Saturno.",
-                pkg_meta_free: "Liberado Gratuitamente"
-            },
-            zh: {
-                lang_select_title: "語言選擇",
-                nav_back_portal: "← LIA Studio 官網",
-                nav_home: "首頁",
-                nav_features: "遊戲特色",
-                nav_packages: "5大主題",
-                nav_privacy: "隱私政策",
-                nav_terms: "服務條款",
-                hero_badge: "✨ 專為全球幼兒打造的純淨安心益智拼圖",
-                hero_title: "與可愛動物小夥伴一起<br><span class=\"highlight\">展開夢幻拼圖大冒險！</span>",
-                hero_desc: "專為 3～7 歲學齡前幼兒設計的零挫折感無壓力拼圖。完成 60 幅溫馨精緻的繪本拼圖，即刻欣賞生動可愛的 10 秒動畫獎勵影片！",
-                hero_cta: "Google Play 下載（即將推出）",
-                feat_1_title: "100% 無商業廣告",
-                feat_1_desc: "無任何彈出廣告或干擾橫幅。為幼兒營造專注、平靜且安全的遊玩環境。",
-                feat_2_title: "10秒精彩動畫慶祝",
-                feat_2_desc: "每完成一幅拼圖，即刻解鎖生動活潑的全動態慶祝動畫影片。",
-                feat_3_title: "3D立體浮雕與磁吸手感",
-                feat_3_desc: "自研 3D 立體著色器、磁吸自動吸附回饋與 3 塊智慧補充托盤設計。",
-                feat_4_title: "成人算術保護門鎖",
-                feat_4_desc: "4 位數數學隨機驗證鎖，徹底防止幼兒好奇誤觸進行應用程式內購買。",
-                pkg_tag: "主題陣容",
-                pkg_heading: "5 大夢幻主題 • 60 道繪本故事關卡",
-                pkg_1_tag: "免費 12 關",
-                pkg_paid_tag: "高級主題包",
-                pkg_1_title: "🏡 主題 1：動物家族的溫馨一日",
-                pkg_1_desc: "小貓家族的鬆餅早餐、柴犬的花園整理、星空下的營火露營故事。",
-                pkg_2_title: "🧳 主題 2：精彩旅行與交通工具",
-                pkg_2_desc: "機場巴士、高鐵火車便當、雲端上的飛機與雙層觀光巴士之旅。",
-                pkg_3_title: "🏰 主題 3：閃耀經典童話王國",
-                pkg_3_desc: "灰姑娘的魔法南瓜馬車、三隻小豬、彼得潘與阿拉丁飛天魔毯。",
-                pkg_4_title: "🦖 主題 4：熱鬧恐龍寶寶世界",
-                pkg_4_desc: "腕龍寶寶摘星星果實、小暴龍叢林冒險、三角龍捉迷藏遊戲。",
-                pkg_5_title: "🚀 主題 5：閃爍太空大冒險",
-                pkg_5_desc: "銀河系火箭飛船、月球表面跳躍、新月釣星星與土星光環溜滑梯。",
-                pkg_meta_free: "預設免費解鎖"
-            },
-            ja: {
-                lang_select_title: "言語設定",
-                nav_back_portal: "← LIA Studio",
-                nav_home: "ホーム",
-                nav_features: "特徴",
-                nav_packages: "5大テーマ",
-                nav_privacy: "プライバシー",
-                nav_terms: "利用規約",
-                hero_badge: "✨ お子様のための心温まる安心知育パズル",
-                hero_title: "かわいい動物たちと<br><span class=\"highlight\">楽しいジグソーパズルの冒険へ！</span>",
-                hero_desc: "3〜7歳の幼児向けに設計された失敗のない優しいパズル。60枚の温かい絵本イラストを完成させて、10秒間の楽しいごほうびアニメーションを楽しもう！",
-                hero_cta: "Google Play（近日公開）",
-                feat_1_title: "100% 広告なしの安心空間",
-                feat_1_desc: "煩わしいバナーやポップアップ広告は一切なし。お子様が安心して集中できます。",
-                feat_2_title: "10秒のアニメごほうび動画",
-                feat_2_desc: "パズルをクリアするたびに、キャラクターが生き生きと動くアニメ動画が再生されます。",
-                feat_3_title: "3D立体エンボス＆吸着タッチ",
-                feat_3_desc: "リアルな3Dシェーダーと磁石スナップ、小さな手でも扱いやすい3ピース自動トレイ。",
-                feat_4_title: "安心のペアレンタルゲート",
-                feat_4_desc: "4桁の計算認証により、お子様の誤操作による課金を確実に防止します。",
-                pkg_tag: "テーマラインナップ",
-                pkg_heading: "5大テーマ • 全60ステージの絵本パズル",
-                pkg_1_tag: "無料12ステージ",
-                pkg_paid_tag: "プレミアムパック",
-                pkg_1_title: "🏡 パック1: 動物ファミリーの楽しい一日",
-                pkg_1_desc: "ネコ親子のパンケーキ、柴犬のお花のお世話、星空の下でのキャンプ。",
-                pkg_2_title: "🧳 パック2: ワクワク乗り物＆旅行の冒険",
-                pkg_2_desc: "空港バス、新幹線、雲の上の飛行機、2階建てロンドンバスツアー。",
-                pkg_3_title: "🏰 パック3: キラキラ名作童話の世界",
-                pkg_3_desc: "シンデレラのかぼちゃの馬車、三匹の子豚、ピーターパン、アラジンの魔法の絨毯。",
-                pkg_4_title: "🦖 パック4: かわいい赤ちゃん恐竜ワールド",
-                pkg_4_desc: "ブラキオサウルスの星の実採り、ティラノサウルスの探検、トリケラトプスの隠れんぼ。",
-                pkg_5_title: "🚀 パック5: キラキラ宇宙大探検",
-                pkg_5_desc: "天の川ロケット、月面ジャンプ、三日月の星釣り、土星の輪のすべり台。",
-                pkg_meta_free: "基本無料開放"
-            },
-            de: {
-                lang_select_title: "Sprache",
-                nav_back_portal: "← LIA Studio",
-                nav_home: "Start",
-                nav_features: "Funktionen",
-                nav_packages: "5 Welten",
-                nav_privacy: "Datenschutz",
-                nav_terms: "AGB",
-                hero_badge: "✨ Liebevolles & sicheres Puzzle-Erlebnis für Kinder",
-                hero_title: "Fröhliche Tierfreunde &<br><span class=\"highlight\">magische Puzzle-Abenteuer!</span>",
-                hero_desc: "Frustfreies, liebevoll gestaltetes Design für Kinder von 3 bis 7 Jahren. Löse 60 wunderschöne Bilderbuch-Puzzles und freue dich auf 10-sekündige animierte Belohnungsvideos!",
-                hero_cta: "Google Play (Demnächst)",
-                feat_1_title: "100% Werbefreier Raum",
-                feat_1_desc: "Keine Werbebanner oder störende Popups. Eine vollkommen sichere Umgebung für Kleinkinder.",
-                feat_2_title: "10s Belohnungsanimationen",
-                feat_2_desc: "Jedes fertige Puzzle schaltet ein lebendiges, fröhliches Belohnungsvideo frei.",
-                feat_3_title: "3D-Relief & magnetisches Einrasten",
-                feat_3_desc: "Realistischer 3D-Reliefeffekt, angenehmes Einrasten und kinderfreundliche 3-Teile-Ablage.",
-                feat_4_title: "Sicherer Elterncode",
-                feat_4_desc: "4-stelliger Rechencode schützt zuverlässig vor unbeabsichtigten In-App-Käufen.",
-                pkg_tag: "Themenwelten",
-                pkg_heading: "5 Themenwelten • 60 Bilderbuch-Puzzles",
-                pkg_1_tag: "12 Level Kostenlos",
-                pkg_paid_tag: "Premium-Paket",
-                pkg_1_title: "🏡 Paket 1: Der Alltag der Tierfamilie",
-                pkg_1_desc: "Pfannkuchen mit Katzen, Gartenpflege mit Shiba Inu und gemütliches Camping.",
-                pkg_2_title: "🧳 Paket 2: Spannende Fahrzeuge & Reisen",
-                pkg_2_desc: "Flughafenbusse, Hochgeschwindigkeitszüge, Flugzeuge über den Wolken und Doppeldeckerbusse.",
-                pkg_3_title: "🏰 Paket 3: Funkelnde Märchenwelt",
-                pkg_3_desc: "Cinderellas Zauberkutsche, Die drei kleinen Schweinchen, Peter Pan und Aladdins Zauberteppich.",
-                pkg_4_title: "🦖 Paket 4: Die süße Welt der Baby-Dinosaurier",
-                pkg_4_desc: "Baby-Brachiosaurus, kleiner T-Rex Dschungelausflug und Versteckspiel mit Triceratops.",
-                pkg_5_title: "🚀 Paket 5: Funkelnde Weltraum-Expedition",
-                pkg_5_desc: "Milchstraßen-Raketen, Mondsprünge, Sternenangeln auf der Mondsichel und Saturnringe.",
-                pkg_meta_free: "Standardmäßig freigeschaltet"
+                pkg_meta_free: "Default Unlocked",
+                pkg_meta_paid: "All-in-One Full Unlock"
             },
             ko: {
                 lang_select_title: "언어 설정",
@@ -936,20 +758,20 @@
                 nav_terms: "이용약관",
                 hero_badge: "✨ 전 세계 어린이들을 위한 감성 가득 직쏘 놀이터",
                 hero_title: "폭신폭신 귀여운 동물들과<br><span class=\"highlight\">함께 떠나는 퍼즐 모험!</span>",
-                hero_desc: "실패와 스트레스가 없는(No-Fail) 3~7세 유아 맞춤 퍼즐. 60가지 고화질 동화 일러스트를 맞추고 10초 시네마틱 애니메이션 보상 영상을 감상해보세요!",
+                hero_desc: "실패와 스트레스가 없는(No-Fail) 3~6세 유아 맞춤 퍼즐. 연령 맞춤 4단계 난이도(4·6·12·20조각)와 60가지 고화질 동화 일러스트를 맞추고 10초 시네마틱 애니메이션 보상 영상을 감상해보세요!",
                 hero_cta: "Google Play 다운로드 (출시 예정)",
                 feat_1_title: "100% 무광고 청정 환경",
                 feat_1_desc: "불쾌한 전면 광고나 배너 없이 아이가 온전히 퍼즐 놀이에 몰입할 수 있습니다.",
                 feat_2_title: "10초 시네마틱 보상 영상",
                 feat_2_desc: "퍼즐을 완성할 때마다 살아 움직이는 생생한 축하 애니메이션 영상이 재생됩니다.",
-                feat_3_title: "3D 입체 엠보싱 퍼즐 엔진",
-                feat_3_desc: "진짜 퍼즐을 만지는 듯한 엠보싱 셰이더와 자석 흡착 스냅, 3개 자동 리필 트레이 탑재.",
-                feat_4_title: "안심 부모 게이트 (Parental Gate)",
-                feat_4_desc: "4자리 연산 게이트웨이로 어린이의 실수 결제를 완벽하게 방지합니다.",
+                feat_3_title: "연령 맞춤 4단계 난이도 (4~20조각)",
+                feat_3_desc: "4조각(2x2), 6조각(3x2), 12조각(4x3), 20조각(5x4) 난이도 지원 및 3D 입체 엠보싱 셰이더와 3개 자동 리필 트레이 탑재.",
+                feat_4_title: "부모 안심 게이트 & 올인원 해금",
+                feat_4_desc: "4자리 연산 게이트웨이로 어린이의 실수 결제를 완벽하게 방지하며, 단 한 번의 올인원 영구 결제로 전체 패키지를 자유롭게 즐깁니다.",
                 pkg_tag: "테마 라인업",
                 pkg_heading: "5대 테마 • 60종의 풍성한 퍼즐 라인업",
                 pkg_1_tag: "무료 12종",
-                pkg_paid_tag: "프리미엄 패키지",
+                pkg_paid_tag: "올인원 패키지",
                 pkg_1_title: "🏡 패키지 1: 동물 가족의 행복한 하루",
                 pkg_1_desc: "고양이 가족의 아침 식사, 시바견 화단 가꾸기, 숲속 모닥불 캠핑 이야기.",
                 pkg_2_title: "🧳 패키지 2: 설레는 여행과 신나는 탈것",
@@ -960,7 +782,230 @@
                 pkg_4_desc: "아기 브라키오 별열매 따기, 꼬마 티라노 정글 탐험, 트리케라톱스 숨바꼭질.",
                 pkg_5_title: "🚀 패키지 5: 반짝반짝 우주 대탐험",
                 pkg_5_desc: "은하수 우주선, 달표면 점프놀이, 초승달 별낚시, 토성 고리 미끄럼틀.",
-                pkg_meta_free: "기본 무료 해금"
+                pkg_meta_free: "기본 무료 해금",
+                pkg_meta_paid: "올인원 일괄 해금"
+            },
+            "zh-CN": {
+                lang_select_title: "语言选择",
+                nav_back_portal: "← LIA Studio 官网",
+                nav_home: "首页",
+                nav_features: "游戏特色",
+                nav_packages: "5大主题",
+                nav_privacy: "隐私政策",
+                nav_terms: "服务条款",
+                hero_badge: "✨ 专为全球幼儿打造的纯净安心益智拼图",
+                hero_title: "与可爱动物小伙伴一起<br><span class=\"highlight\">展开梦幻拼图大冒险！</span>",
+                hero_desc: "专为 3～6 岁学龄前幼儿设计的零挫折感无压力拼图。提供 4 阶适龄难度（4、6、12、20块），完成 60 幅温馨精致的绘本拼图，即刻欣赏生动可爱的 10 秒动画奖励视频！",
+                hero_cta: "Google Play 下载（即将推出）",
+                feat_1_title: "100% 无商业广告",
+                feat_1_desc: "无任何弹出广告或干扰横幅。为幼儿营造专注、平静且安全的游玩环境。",
+                feat_2_title: "10秒精彩动画庆祝",
+                feat_2_desc: "每完成一幅拼图，即刻解锁生动活泼的全动态庆祝动画视频。",
+                feat_3_title: "4阶分龄难度（4~20块）",
+                feat_3_desc: "4块(2x2)、6块(3x2)、12块(4x3)、20块(5x4)专属难度，配备 3D 立体浮雕手感与 3 块智能补充托盘。",
+                feat_4_title: "家长安全锁与一键永久解锁",
+                feat_4_desc: "4 位数算术验证门锁有效防止幼儿误触，一次购买即可永久解锁全部主题包。",
+                pkg_tag: "主题阵容",
+                pkg_heading: "5 大梦幻主题 • 60 道绘本故事关卡",
+                pkg_1_tag: "免费 12 关",
+                pkg_paid_tag: "全包合集包",
+                pkg_1_title: "🏡 主题 1：动物家族的温馨一日",
+                pkg_1_desc: "小猫家族的松饼早餐、柴犬的花园整理、星空下的营火露营故事。",
+                pkg_2_title: "🧳 主题 2：精彩旅行与交通工具",
+                pkg_2_desc: "机场巴士、高铁火车便当、云端上的飞机与双层观光巴士之旅。",
+                pkg_3_title: "🏰 主题 3：闪耀经典童话王国",
+                pkg_3_desc: "灰姑娘的魔法南瓜马车、三只小猪、彼得潘与阿拉丁飞天魔毯。",
+                pkg_4_title: "🦖 主题 4：热闹恐龙宝宝世界",
+                pkg_4_desc: "腕龙宝宝摘星星果实、小暴龙丛林冒险、三角龙捉迷藏游戏。",
+                pkg_5_title: "🚀 主题 5：闪烁太空大冒险",
+                pkg_5_desc: "银河系火箭飞船、月球表面跳跃、新月钓星星与土星光环溜滑梯。",
+                pkg_meta_free: "默认免费解锁",
+                pkg_meta_paid: "全合一一次性解锁"
+            },
+            "zh-TW": {
+                lang_select_title: "語言選擇",
+                nav_back_portal: "← LIA Studio 官網",
+                nav_home: "首頁",
+                nav_features: "遊戲特色",
+                nav_packages: "5大主題",
+                nav_privacy: "隱私政策",
+                nav_terms: "服務條款",
+                hero_badge: "✨ 專為全球幼兒打造的純淨安心益智拼圖",
+                hero_title: "與可愛動物小夥伴一起<br><span class=\"highlight\">展開夢幻拼圖大冒險！</span>",
+                hero_desc: "專為 3～6 歲學齡前幼兒設計的零挫折感無壓力拼圖。提供 4 階適齡難度（4、6、12、20片），完成 60 幅溫馨精緻的繪本拼圖，即刻欣賞生動可愛的 10 秒動畫獎勵影片！",
+                hero_cta: "Google Play 下載（即將推出）",
+                feat_1_title: "100% 無商業廣告",
+                feat_1_desc: "無任何彈出廣告或干擾橫幅。為幼兒營造專注、平靜且安全的遊玩環境。",
+                feat_2_title: "10秒精彩動畫慶祝",
+                feat_2_desc: "每完成一幅拼圖，即刻解鎖生動活潑的全動態慶祝動畫影片。",
+                feat_3_title: "4階分齡難度（4~20片）",
+                feat_3_desc: "4片(2x2)、6片(3x2)、12片(4x3)、20片(5x4)專屬難度，配備 3D 立體浮雕手感與 3 塊智慧補充托盤。",
+                feat_4_title: "家長安全鎖與一鍵永久解鎖",
+                feat_4_desc: "4 位數算術驗證門鎖有效防止幼兒誤觸，一次購買即可永久解鎖全部主題包。",
+                pkg_tag: "主題陣容",
+                pkg_heading: "5 大夢幻主題 • 60 道繪本故事關卡",
+                pkg_1_tag: "免費 12 關",
+                pkg_paid_tag: "全包合集包",
+                pkg_1_title: "🏡 主題 1：動物家族的溫馨一日",
+                pkg_1_desc: "小貓家族的鬆餅早餐、柴犬的花園整理、星空下的營火露營故事。",
+                pkg_2_title: "🧳 主題 2：精彩旅行與交通工具",
+                pkg_2_desc: "機場巴士、高鐵火車便當、雲端上的飛機與雙層觀光巴士之旅。",
+                pkg_3_title: "🏰 主題 3：閃耀經典童話王國",
+                pkg_3_desc: "灰姑娘的魔法南瓜馬車、三隻小豬、彼得潘與阿拉丁飛天魔毯。",
+                pkg_4_title: "🦖 主題 4：熱鬧恐龍寶寶世界",
+                pkg_4_desc: "腕龍寶寶摘星星果實、小暴龍叢林冒險、三角龍捉迷藏遊戲。",
+                pkg_5_title: "🚀 主題 5：閃爍太空大冒險",
+                pkg_5_desc: "銀河系火箭飛船、月球表面跳躍、新月釣星星與土星光環溜滑梯。",
+                pkg_meta_free: "預設免費解鎖",
+                pkg_meta_paid: "全合一一次性解鎖"
+            },
+            ja: {
+                lang_select_title: "言語設定",
+                nav_back_portal: "← LIA Studio",
+                nav_home: "ホーム",
+                nav_features: "特徴",
+                nav_packages: "5大テーマ",
+                nav_privacy: "プライバシー",
+                nav_terms: "利用規約",
+                hero_badge: "✨ お子様のための心温まる安心知育パズル",
+                hero_title: "かわいい動物たちと<br><span class=\"highlight\">楽しいジグソーパズルの冒険へ！</span>",
+                hero_desc: "3〜6歳の幼児向けに設計された失敗のない優しいパズル。4段階の難易度（4・6・12・20ピース）から選んで、60枚の温かい絵本イラストを完成させ、10秒間の楽しいごほうびアニメーションを楽しもう！",
+                hero_cta: "Google Play（近日公開）",
+                feat_1_title: "100% 広告なしの安心空間",
+                feat_1_desc: "煩わしいバナーやポップアップ広告は一切なし。お子様が安心して集中できます。",
+                feat_2_title: "10秒のアニメごほうび動画",
+                feat_2_desc: "パズルをクリアするたびに、キャラクターが生き生きと動くアニメ動画が再生されます。",
+                feat_3_title: "4段階の難易度（4〜20ピース）",
+                feat_3_desc: "4ピース(2x2)、6ピース(3x2)、12ピース(4x3)、20ピース(5x4)に対応。3D立体エンボスと3ピース自動トレイを搭載。",
+                feat_4_title: "ペアレンタルゲート＆安心の一括解除",
+                feat_4_desc: "4桁計算認証により誤課金を確実に防止。買い切り1回のオールインワンで全パッケージを永久解放。",
+                pkg_tag: "テーマラインナップ",
+                pkg_heading: "5大テーマ • 全60ステージの絵本パズル",
+                pkg_1_tag: "無料12ステージ",
+                pkg_paid_tag: "オールインワンパック",
+                pkg_1_title: "🏡 パック1: 動物ファミリーの楽しい一日",
+                pkg_1_desc: "ネコ親子のパンケーキ、柴犬のお花のお世話、星空の下でのキャンプ。",
+                pkg_2_title: "🧳 パック2: ワクワク乗り物＆旅行の冒険",
+                pkg_2_desc: "空港バス、新幹線、雲の上の飛行機、2階建てロンドンバスツアー。",
+                pkg_3_title: "🏰 パック3: キラキラ名作童話の世界",
+                pkg_3_desc: "シンデレラのかぼちゃの馬車、三匹の子豚、ピーターパン、アラジンの魔法の絨毯。",
+                pkg_4_title: "🦖 パック4: かわいい赤ちゃん恐竜ワールド",
+                pkg_4_desc: "ブラキオサウルスの星の実採り、ティラノサウルスの探検、トリケラトプスの隠れんぼ。",
+                pkg_5_title: "🚀 パック5: キラキラ宇宙大探検",
+                pkg_5_desc: "天の川ロケット、月面ジャンプ、三日月の星釣り、土星の輪のすべり台。",
+                pkg_meta_free: "基本無料開放",
+                pkg_meta_paid: "オールインワン一括解放"
+            },
+            de: {
+                lang_select_title: "Sprache",
+                nav_back_portal: "← LIA Studio",
+                nav_home: "Start",
+                nav_features: "Funktionen",
+                nav_packages: "5 Welten",
+                nav_privacy: "Datenschutz",
+                nav_terms: "AGB",
+                hero_badge: "✨ Liebevolles & sicheres Puzzle-Erlebnis für Kinder",
+                hero_title: "Fröhliche Tierfreunde &<br><span class=\"highlight\">magische Puzzle-Abenteuer!</span>",
+                hero_desc: "Frustfreies, liebevoll gestaltetes Design für Kinder von 3 bis 6 Jahren. Wähle aus 4 Schwierigkeitsstufen (4, 6, 12, 20 Teile) für 60 wunderschöne Bilderbuch-Puzzles und freue dich auf 10-sekündige animierte Belohnungsvideos!",
+                hero_cta: "Google Play (Demnächst)",
+                feat_1_title: "100% Werbefreier Raum",
+                feat_1_desc: "Keine Werbebanner oder störende Popups. Eine vollkommen sichere Umgebung für Kleinkinder.",
+                feat_2_title: "10s Belohnungsanimationen",
+                feat_2_desc: "Jedes fertige Puzzle schaltet ein lebendiges, fröhliches Belohnungsvideo frei.",
+                feat_3_title: "4 Schwierigkeitsstufen (4–20 Teile)",
+                feat_3_desc: "4 Teile (2x2), 6 Teile (3x2), 12 Teile (4x3), 20 Teile (5x4) mit 3D-Reliefeffekt und 3-Teile-Ablage.",
+                feat_4_title: "Elterncode & Komplettfreischaltung",
+                feat_4_desc: "4-stelliger Rechencode schützt zuverlässig vor In-App-Käufen. Einmalige Komplettfreischaltung für alle Themenwelten.",
+                pkg_tag: "Themenwelten",
+                pkg_heading: "5 Themenwelten • 60 Bilderbuch-Puzzles",
+                pkg_1_tag: "12 Level Kostenlos",
+                pkg_paid_tag: "All-in-One Paket",
+                pkg_1_title: "🏡 Paket 1: Der Alltag der Tierfamilie",
+                pkg_1_desc: "Pfannkuchen mit Katzen, Gartenpflege mit Shiba Inu und gemütliches Camping.",
+                pkg_2_title: "🧳 Paket 2: Spannende Fahrzeuge & Reisen",
+                pkg_2_desc: "Flughafenbusse, Hochgeschwindigkeitszüge, Flugzeuge über den Wolken und Doppeldeckerbusse.",
+                pkg_3_title: "🏰 Paket 3: Funkelnde Märchenwelt",
+                pkg_3_desc: "Cinderellas Zauberkutsche, Die drei kleinen Schweinchen, Peter Pan und Aladdins Zauberteppich.",
+                pkg_4_title: "🦖 Paket 4: Die süße Welt der Baby-Dinosaurier",
+                pkg_4_desc: "Baby-Brachiosaurus, kleiner T-Rex Dschungelausflug und Versteckspiel mit Triceratops.",
+                pkg_5_title: "🚀 Paket 5: Funkelnde Weltraum-Expedition",
+                pkg_5_desc: "Milchstraßen-Raketen, Mondsprünge, Sternenangeln auf der Mondsichel und Saturnringe.",
+                pkg_meta_free: "Standardmäßig freigeschaltet",
+                pkg_meta_paid: "All-in-One Freischaltung"
+            },
+            es: {
+                lang_select_title: "Idioma",
+                nav_back_portal: "← LIA Studio",
+                nav_home: "Inicio",
+                nav_features: "Características",
+                nav_packages: "5 Paquetes",
+                nav_privacy: "Privacidad",
+                nav_terms: "Términos",
+                hero_badge: "✨ El Parque de Rompecabezas más Tierno y Seguro",
+                hero_title: "¡Tiernos Animalitos y<br><span class=\"highlight\">Mágicas Aventuras de Puzles!</span>",
+                hero_desc: "Diseño sin estrés ni frustración (No-Fail) para niños de 3 a 6 años. Elige entre 4 dificultades (4, 6, 12, 20 piezas) en 60 hermosos rompecabezas ilustrados y disfruta de videos animados de recompensa de 10 segundos!",
+                hero_cta: "Google Play (Próximamente)",
+                feat_1_title: "100% Libre de Anuncios",
+                feat_1_desc: "Sin banners ni publicidad invasiva. Un entorno totalmente seguro para el aprendizaje infantil.",
+                feat_2_title: "Videos de Recompensa de 10s",
+                feat_2_desc: "Cada rompecabezas completado desbloquea un video animado lleno de color y alegría.",
+                feat_3_title: "4 Dificultades (4 a 20 Pzas)",
+                feat_3_desc: "4 piezas (2x2), 6 piezas (3x2), 12 piezas (4x3) y 20 piezas (5x4) con tacto 3D en relieve y bandeja inteligente.",
+                feat_4_title: "Control Parental y Desbloqueo Total",
+                feat_4_desc: "Desafío aritmético de 4 dígitos para proteger compras. Desbloqueo único permanente de todos los paquetes.",
+                pkg_tag: "Colección de Temas",
+                pkg_heading: "5 Grandes Temas • 60 Rompecabezas de Cuento",
+                pkg_1_tag: "12 Fases Gratis",
+                pkg_paid_tag: "Paquete Todo en Uno",
+                pkg_1_title: "🏡 Paquete 1: El Día a Día de los Animales",
+                pkg_1_desc: "Desayuno con gatitos, jardinería con Shiba Inu y acampada bajo las estrellas.",
+                pkg_2_title: "🧳 Paquete 2: Viajes y Vehículos Divertidos",
+                pkg_2_desc: "Autobuses de aeropuerto, trenes de alta velocidad, aviones y autobuses turísticos.",
+                pkg_3_title: "🏰 Paquete 3: Cuentos de Hadas Mágicos",
+                pkg_3_desc: "El carruaje de Cenicienta, Los Tres Cerditos, Peter Pan y la alfombra mágica de Aladino.",
+                pkg_4_title: "🦖 Paquete 4: Mundo de Bebés Dinosaurios",
+                pkg_4_desc: "El pequeño Braquiosaurio, expedición con T-Rex y escondite con Triceratops.",
+                pkg_5_title: "🚀 Paquete 5: Exploración Espacial Brillante",
+                pkg_5_desc: "Cohetes espaciales, saltos en la luna, pesca de estrellas y anillos de Saturno.",
+                pkg_meta_free: "Desbloqueado por defecto",
+                pkg_meta_paid: "Desbloqueo Total All-in-One"
+            },
+            pt: {
+                lang_select_title: "Idioma",
+                nav_back_portal: "← LIA Studio",
+                nav_home: "Início",
+                nav_features: "Recursos",
+                nav_packages: "5 Pacotes",
+                nav_privacy: "Privacidade",
+                nav_terms: "Termos",
+                hero_badge: "✨ O Playground de Quebra-Cabeças Perfeito para Crianças",
+                hero_title: "Amiguinhos Animais &<br><span class=\"highlight\">Aventuras Mágicas de Quebra-Cabeça!</span>",
+                hero_desc: "Desenvolvido sem estresse nem falhas para crianças de 3 a 6 anos. Escolha entre 4 níveis de dificuldade (4, 6, 12, 20 peças) em 60 quebra-cabeças ilustrados e comemore com vídeos animados de 10 segundos!",
+                hero_cta: "Google Play (Em Breve)",
+                feat_1_title: "100% Livre de Anúncios",
+                feat_1_desc: "Sem banners ou popups invasivos. Um ambiente limpo e acolhedor para os pequenos.",
+                feat_2_title: "Vídeos de Recompensa de 10s",
+                feat_2_desc: "Cada quebra-cabeça concluído libera uma animação alegre que dá vida aos personagens.",
+                feat_3_title: "4 Dificuldades (4 a 20 Peças)",
+                feat_3_desc: "4 peças (2x2), 6 peças (3x2), 12 peças (4x3) e 20 peças (5x4) com toque 3D em relevo e bandeja inteligente.",
+                feat_4_title: "Bloqueio Parental & Desbloqueio Total",
+                feat_4_desc: "Desafio de 4 dígitos para prevenir compras acidentais. Compra única que desbloqueia todos os temas permanentemente.",
+                pkg_tag: "Linha de Temas",
+                pkg_heading: "5 Temas Incríveis • 60 Quebra-Cabeças de Conto de Fadas",
+                pkg_1_tag: "12 Fases Grátis",
+                pkg_paid_tag: "Pacote Tudo-em-Um",
+                pkg_1_title: "🏡 Pacote 1: O Dia a Dia da Família Animal",
+                pkg_1_desc: "Panquecas com a família de gatinhos, jardinagem com Shiba Inu e piquenique na praia.",
+                pkg_2_title: "🧳 Pacote 2: Viagens e Veículos Divertidos",
+                pkg_2_desc: "Ônibus de aeroporto, trens-bala, aviões nas nuvens e passeios de ônibus turístico.",
+                pkg_3_title: "🏰 Pacote 3: Contos de Fadas Brilhantes",
+                pkg_3_desc: "A carruagem da Cinderela, Os Três Porquinhos, Peter Pan e o tapete mágico de Aladdin.",
+                pkg_4_title: "🦖 Pacote 4: Mundo dos Bebês Dinossauros",
+                pkg_4_desc: "Bebê Braquiossauro, exploração na selva com T-Rex e esconde-esconde com Triceratops.",
+                pkg_5_title: "🚀 Pacote 5: Exploração Espacial Radiante",
+                pkg_5_desc: "Foguetes espaciais, pulos na lua, pescaria de estrelas e os anéis de Saturno.",
+                pkg_meta_free: "Liberado Gratuitamente",
+                pkg_meta_paid: "Desbloqueio Total Tudo-em-Um"
             }
         };
 
@@ -969,7 +1014,8 @@
             const rawLang = (navigator.language || (navigator.languages && navigator.languages[0]) || 'en').toLowerCase();
             
             if (rawLang.startsWith('ko')) return 'ko';
-            if (rawLang.startsWith('zh')) return 'zh';
+            if (rawLang.includes('cn') || rawLang.includes('hans')) return 'zh-CN';
+            if (rawLang.includes('tw') || rawLang.includes('hk') || rawLang.includes('hant') || rawLang.startsWith('zh')) return 'zh-TW';
             if (rawLang.startsWith('ja')) return 'ja';
             if (rawLang.startsWith('de')) return 'de';
             if (rawLang.startsWith('es')) return 'es';
@@ -1009,7 +1055,7 @@
             document.body.classList.remove('lang-ko', 'lang-ja', 'lang-zh');
             if (lang === 'ko') document.body.classList.add('lang-ko');
             else if (lang === 'ja') document.body.classList.add('lang-ja');
-            else if (lang === 'zh') document.body.classList.add('lang-zh');
+            else if (lang.startsWith('zh')) document.body.classList.add('lang-zh');
 
             localStorage.setItem('lia_studio_lang', lang);
         }
