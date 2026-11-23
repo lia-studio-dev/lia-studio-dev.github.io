@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Pet Paint | LIA Studio</title>
+    <meta name="description" content="Official Privacy Policy for Pet Paint (com.lia.petpaint). Compliant with COPPA, GDPR-K, LGPD, and Google Play Families Policy. 100% Free, Ad-Free, Zero In-App Purchases, Zero Data Collection.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #F4F8F6;
+            --surface-card: #FFFFFF;
+            --border-line: #E0EBE6;
+            --text-heading: #112A24;
+            --text-body: #334D46;
+            --text-muted: #6B857E;
+            --accent-sage: #0D9488;
+            --accent-light: #E6F7F5;
+            --shadow-subtle: 0 4px 20px rgba(13, 148, 136, 0.05);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-page); color: var(--text-body); line-height: 1.75; padding: 2.5rem 1rem;
+        }
+        body.lang-ko { font-family: 'Noto Sans KR', 'Plus Jakarta Sans', sans-serif; }
+        body.lang-ja { font-family: 'Noto Sans JP', 'Plus Jakarta Sans', sans-serif; }
+        body.lang-zh { font-family: 'Noto Sans TC', 'Plus Jakarta Sans', sans-serif; }
+        .doc-container { max-width: 860px; margin: 0 auto; background: var(--surface-card); border: 1px solid var(--border-line); border-radius: 1.5rem; box-shadow: var(--shadow-subtle); overflow: hidden; }
+        .doc-header { padding: 1.75rem 2.5rem; background: var(--surface-card); border-bottom: 1px solid var(--border-line); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .brand-link { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-heading); font-weight: 800; font-size: 1.15rem; }
+        .brand-link img { width: 36px; height: 36px; border-radius: 10px; }
+        .portal-back-link { font-size: 0.825rem; color: var(--accent-sage); font-weight: 700; text-decoration: none; background: var(--accent-light); padding: 0.35rem 0.75rem; border-radius: 9999px; margin-right: 0.5rem; }
+        .nav-lang-selector { display: flex; align-items: center; gap: 0.4rem; background: rgba(255, 255, 255, 0.8); border: 1px solid var(--border-line); padding: 0.35rem 0.75rem; border-radius: 999px; margin-left: auto; }
+        .lang-select-box { background: transparent; border: none; color: var(--text-heading); font-size: 0.85rem; font-weight: 700; cursor: pointer; outline: none; font-family: inherit; }
+        .doc-body { padding: 3rem 2.5rem 3.5rem; }
+        .badge-category { display: inline-block; background: var(--accent-light); color: var(--accent-sage); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 0.3rem 0.75rem; border-radius: 9999px; margin-bottom: 0.75rem; }
+        h1 { font-size: 2rem; font-weight: 800; color: var(--text-heading); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+        .meta-info { color: var(--text-muted); font-size: 0.875rem; margin-bottom: 2rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border-line); }
+        .summary-callout { background: var(--accent-light); border-left: 4px solid var(--accent-sage); padding: 1.25rem 1.5rem; border-radius: 0 1rem 1rem 0; margin-bottom: 2.5rem; font-size: 0.95rem; color: var(--text-heading); }
+        section { margin-bottom: 2.25rem; }
+        h2 { font-size: 1.25rem; font-weight: 700; color: var(--text-heading); margin-bottom: 0.75rem; }
+        p { margin-bottom: 0.85rem; font-size: 0.95rem; }
+        ul { margin-left: 1.5rem; margin-bottom: 1rem; font-size: 0.95rem; }
+        li { margin-bottom: 0.4rem; }
+        strong { color: var(--text-heading); }
+        .lang-pane { display: none; }
+        .lang-pane.active { display: block; }
+        footer { text-align: center; margin-top: 2rem; color: var(--text-muted); font-size: 0.825rem; }
+        @media (max-width: 768px) {
+            .doc-header { flex-direction: column; align-items: flex-start; }
+            .nav-lang-selector { margin-left: 0; width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="doc-container">
+        <div class="doc-header">
+            <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+                <a href="index.html" class="portal-back-link">← Pet Paint</a>
+                <a href="index.html" class="brand-link">
+                    <img src="assets/icon.png" alt="Pet Paint Icon">
+                    <span>Pet Paint</span>
+                </a>
+            </div>
+            <div class="nav-lang-selector">
+                <span class="lang-icon">🌐</span>
+                <select id="langSelect" class="lang-select-box" onchange="switchLang(this.value)">
+                    <option value="en">English</option>
+                    <option value="ko">한국어</option>
+                    <option value="ja">日本語</option>
+                    <option value="zh-CN">简体中文</option>
+                    <option value="zh-TW">繁體中文</option>
+                    <option value="de">Deutsch</option>
+                    <option value="es">Español</option>
+                    <option value="pt">Português</option>
+                </select>
+            </div>
+        </div>
+
+        <main class="doc-body">
+            <!-- 1. ENGLISH -->
+            <div id="pane-en" class="lang-pane active">
+                <div class="badge-category">Legal & Compliance</div>
+                <h1>Privacy Policy</h1>
+                <p class="meta-info">App: Pet Paint (com.lia.petpaint) • Studio: LIA Studio • Last Updated: November 2026</p>
+
+                <div class="summary-callout">
+                    <p><strong>Pet Paint</strong> is designed specifically for young children aged 3–5. <strong>We do NOT collect, store, or transmit ANY Personally Identifiable Information (PII).</strong> The app is <strong>100% Free, 100% Ad-Free, contains NO In-App Purchases, and requires ZERO device permissions</strong> (works completely offline).</p>
+                </div>
+
+                <section>
+                    <h2>1. Overview and Core Philosophy</h2>
+                    <p>LIA (Luz Interactive Application) / LIA Studio ("we", "our", or "us") is dedicated to protecting the privacy and safety of young children and families. This Privacy Policy explains our zero-data practices for <strong>Pet Paint</strong> (<code>com.lia.petpaint</code>).</p>
+                </section>
+
+                <section>
+                    <h2>2. Zero Personal Data Collection Policy</h2>
+                    <p>We strictly adhere to a zero-collection policy for children and all users:</p>
+                    <ul>
+                        <li><strong>No Personal Identifiers:</strong> We do not collect names, email addresses, phone numbers, birthdates, or physical addresses.</li>
+                        <li><strong>No Geolocation or Network Tracking:</strong> Pet Paint operates 100% offline and does not access GPS, IP addresses, or external servers.</li>
+                        <li><strong>No Advertising or Analytics SDKs:</strong> We do not include any third-party analytics, crash-reporting trackers, Advertising IDs (GAID), or profiling SDKs.</li>
+                        <li><strong>Zero Device Permissions:</strong> The application does not request camera, microphone, contacts, storage, or internet permissions.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>3. 100% Free, Zero Ads, Zero In-App Purchases</h2>
+                    <p><strong>Pet Paint contains NO advertisements</strong> (no banners, no interstitials, no rewarded videos) and <strong>NO in-app purchases</strong>. All 40 coloring templates and playground interactions are free for every child.</p>
+                </section>
+
+                <section>
+                    <h2>4. Local-Only Storage & Parental Gate</h2>
+                    <p>Children's colored artwork and playground creations are saved strictly in private local storage on the user's own device and are never uploaded anywhere. Resetting local saved artwork is protected behind a <strong>Parents Only Gate</strong> to prevent accidental deletion by young children.</p>
+                </section>
+
+                <section>
+                    <h2>5. Global Child Privacy Compliance</h2>
+                    <ul>
+                        <li><strong>COPPA (Children's Online Privacy Protection Act - USA)</strong></li>
+                        <li><strong>GDPR-K (General Data Protection Regulation for Kids - EU)</strong></li>
+                        <li><strong>LGPD (Lei Geral de Proteção de Dados - Brazil)</strong></li>
+                        <li><strong>Google Play Families Policy & Teacher Approved Standards</strong></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>6. Contact Us</h2>
+                    <ul>
+                        <li><strong>Developer:</strong> LIA (Luz Interactive Application) / LIA Studio</li>
+                        <li><strong>Support Email:</strong> <a href="mailto:holaneuri@gmail.com" style="color:var(--accent-sage); font-weight:700;">holaneuri@gmail.com</a></li>
+                        <li><strong>Official Portal:</strong> <a href="https://lia-studio-dev.github.io/" target="_blank" rel="noopener" style="color:var(--accent-sage); text-decoration:none; font-weight:700;">https://lia-studio-dev.github.io/</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- 2. 한국어 -->
+            <div id="pane-ko" class="lang-pane">
+                <div class="badge-category">법적 고지 및 준수 사항</div>
+                <h1>개인정보처리방침</h1>
+                <p class="meta-info">앱 명칭: Pet Paint (com.lia.petpaint) • 개발사: LIA Studio • 최종 개정일: 2026년 11월</p>
+
+                <div class="summary-callout">
+                    <p><strong>'Pet Paint'</strong>는 3~5세 유아를 위해 설계된 색칠놀이 &amp; 인터랙티브 펫 놀이터 앱입니다. <strong>어떠한 개인식별정보(PII)도 일절 수집·저장·전송하지 않으며, 100% 무료 · 무광고 · 무과금(인앱결제 없음) · 기기 권한 0개</strong>로 완전 오프라인에서 안전하게 동작합니다.</p>
+                </div>
+
+                <section>
+                    <h2>1. 개요 및 아동 개인정보 보호 원칙</h2>
+                    <p>LIA (Luz Interactive Application) / LIA Studio(이하 "개발사")는 어린이와 가족의 개인정보 보호를 최우선 가치로 삼고 있습니다. 본 방침은 <strong>'Pet Paint'</strong>(<code>com.lia.petpaint</code>)의 개인정보 처리 기준을 명시합니다.</p>
+                </section>
+
+                <section>
+                    <h2>2. 개인정보 수집 제로(Zero Collection) 원칙</h2>
+                    <ul>
+                        <li><strong>개인식별정보 비수집:</strong> 이름, 이메일, 전화번호, 생년월일, 주소 등을 일절 수집하지 않습니다.</li>
+                        <li><strong>위치 및 네트워크 비추적:</strong> 본 앱은 100% 오프라인으로 동작하며 GPS, IP 주소 또는 외부 서버 통신을 사용하지 않습니다.</li>
+                        <li><strong>광고·분석 SDK 미포함:</strong> 맞춤형 광고 식별자(ADID)나 제3자 분석·추적 도구를 전혀 포함하지 않습니다.</li>
+                        <li><strong>기기 권한 미요구:</strong> 카메라, 마이크, 연락처, 저장소, 인터넷 등 어떠한 민감 권한도 요청하지 않습니다.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>3. 100% 무료 · 무광고 · 무과금 정책</h2>
+                    <p><strong>Pet Paint는 타사 광고(배너, 전면, 보상형 영상)와 인앱결제가 일절 없으며</strong>, 모든 40종의 도안과 놀이터 인터랙션을 무료로 제공합니다.</p>
+                </section>
+
+                <section>
+                    <h2>4. 기기 내 로컬 저장 및 부모 확인 게이트</h2>
+                    <p>아이가 색칠한 그림과 놀이터 배치는 사용자 기기 내부의 비공개 로컬 공간에만 저장되며 외부로 전송되지 않습니다. 저장된 그림 초기화는 유아의 실수 삭제를 막기 위해 <strong>부모 확인 게이트(Parents Only)</strong>로 보호됩니다.</p>
+                </section>
+
+                <section>
+                    <h2>5. 글로벌 아동 보호 규정 준수</h2>
+                    <p>본 앱은 <strong>COPPA(미국 아동 온라인 개인정보 보호법), GDPR-K(유럽), LGPD(브라질), Google Play 가족 정책(Families Policy)</strong>을 완벽히 준수합니다.</p>
+                </section>
+
+                <section>
+                    <h2>6. 고객지원 및 문의처</h2>
+                    <ul>
+                        <li><strong>개발사:</strong> LIA (Luz Interactive Application) / LIA Studio</li>
+                        <li><strong>문의 이메일:</strong> <a href="mailto:holaneuri@gmail.com" style="color:var(--accent-sage); font-weight:700;">holaneuri@gmail.com</a></li>
+                        <li><strong>공식 웹사이트:</strong> <a href="https://lia-studio-dev.github.io/" target="_blank" rel="noopener" style="color:var(--accent-sage); text-decoration:none; font-weight:700;">https://lia-studio-dev.github.io/</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- 3. 日本語 -->
+            <div id="pane-ja" class="lang-pane">
+                <div class="badge-category">プライバシーとセキュリティ</div>
+                <h1>プライバシーポリシー</h1>
+                <p class="meta-info">アプリ名：Pet Paint (com.lia.petpaint) • 開発元：LIA Studio • 最終改定日：2026年11月</p>
+                <div class="summary-callout">
+                    <p><strong>Pet Paint</strong>は3〜5歳の幼児向けに作られた塗り絵＆ペット遊びアプリです。<strong>個人情報の収集・保存・外部送信は一切行いません。</strong>完全無料・<strong>100%広告なし・アプリ内課金なし・端末権限ゼロ</strong>のオフライン設計です。</p>
+                </div>
+                <section><h2>1. 個人情報の非収集</h2><p>氏名、連絡先、位置情報、広告ID等の個人識別情報を一切取得しません。塗り絵データはお使いの端末内にのみローカル保存されます。</p></section>
+                <section><h2>2. 広告・課金ゼロ</h2><p>第三者広告やアプリ内課金は一切含まれていません。データ初期化には保護者確認ゲートを搭載しています。</p></section>
+                <section><h2>3. お問い合わせ</h2><p>サポート窓口：<strong>holaneuri@gmail.com</strong></p></section>
+            </div>
+
+            <!-- 4. 简体中文 -->
+            <div id="pane-zh-CN" class="lang-pane">
+                <div class="badge-category">隐私安全与合规</div>
+                <h1>隐私政策</h1>
+                <p class="meta-info">应用名称：Pet Paint (com.lia.petpaint) • 开发商：LIA Studio • 生效日期：2026年11月</p>
+                <div class="summary-callout">
+                    <p><strong>Pet Paint</strong> 专为 3～5 岁幼儿设计。<strong>我们绝不收集、存储或传输任何个人身份信息 (PII)。</strong>本应用 <strong>100% 免费、无广告、无应用内购买、零设备权限</strong>，完全离线运行。</p>
+                </div>
+                <section><h2>1. 零数据收集原则</h2><p>不收集姓名、位置、广告 ID 或任何个人信息。所有画作仅保存在设备本地，绝不上传至任何服务器。</p></section>
+                <section><h2>2. 无广告与无内购</h2><p>完全不含第三方广告及应用内购买。重置本地画作受家长确认门锁保护。</p></section>
+                <section><h2>3. 联系方式</h2><p>支持邮箱：<strong>holaneuri@gmail.com</strong></p></section>
+            </div>
+
+            <!-- 5. 繁體中文 -->
+            <div id="pane-zh-TW" class="lang-pane">
+                <div class="badge-category">隱私安全與合規</div>
+                <h1>隱私權政策</h1>
+                <p class="meta-info">應用名稱：Pet Paint (com.lia.petpaint) • 開發商：LIA Studio • 生效日期：2026年11月</p>
+                <div class="summary-callout">
+                    <p><strong>Pet Paint</strong> 專為 3～5 歲幼兒設計。<strong>我們絕不收集、儲存或傳輸任何個人識別資訊 (PII)。</strong>本應用 <strong>100% 免費、無廣告、無應用程式內購買、零裝置權限</strong>，完全離線運作。</p>
+                </div>
+                <section><h2>1. 零資料收集原則</h2><p>不收集姓名、位置、廣告 ID 或任何個人資訊。所有畫作僅儲存在裝置本機。</p></section>
+                <section><h2>2. 聯絡方式</h2><p>支援信箱：<strong>holaneuri@gmail.com</strong></p></section>
+            </div>
+
+            <!-- 6. DEUTSCH -->
+            <div id="pane-de" class="lang-pane">
+                <div class="badge-category">Rechtliches & Datenschutz</div>
+                <h1>Datenschutzerklärung</h1>
+                <p class="meta-info">App: Pet Paint (com.lia.petpaint) • Studio: LIA Studio • Stand: November 2026</p>
+                <div class="summary-callout">
+                    <p><strong>Pet Paint</strong> wurde speziell für Kinder von 3 bis 5 Jahren entwickelt. <strong>Wir erfassen, speichern oder übermitteln KEINE personenbezogenen Daten.</strong> 100% kostenlos, <strong>werbefrei, ohne In-App-Käufe und ohne Geräteberechtigungen</strong>.</p>
+                </div>
+                <section><h2>1. Datenschutz & Offline-Betrieb</h2><p>Alle Zeichnungen bleiben lokal auf Ihrem Gerät. Keine Werbung, keine Tracker, konform mit DSGVO-K, COPPA und Google Play Familienrichtlinien.</p></section>
+                <section><h2>2. Kontakt</h2><p>Support: <strong>holaneuri@gmail.com</strong></p></section>
+            </div>
+
+            <!-- 7. ESPAÑOL -->
+            <div id="pane-es" class="lang-pane">
+                <div class="badge-category">Legal y Cumplimiento</div>
+                <h1>Política de Privacidad</h1>
+                <p class="meta-info">Aplicación: Pet Paint (com.lia.petpaint) • Estudio: LIA Studio • Última actualización: Noviembre de 2026</p>
+                <div class="summary-callout">
+                    <p><strong>Pet Paint</strong> está diseñado para niños de 3 a 5 años. <strong>NO recopilamos, almacenamos ni transmitimos ningún dato personal (PII).</strong> 100% gratis, <strong>sin anuncios, sin compras integradas y sin permisos de dispositivo</strong>.</p>
+                </div>
+                <section><h2>1. Cero Datos y Sin Anuncios</h2><p>Todos los dibujos se guardan únicamente en el dispositivo local. Cumple totalmente con COPPA, GDPR-K y Google Play Families.</p></section>
+                <section><h2>2. Contacto</h2><p>Soporte: <strong>holaneuri@gmail.com</strong></p></section>
+            </div>
+
+            <!-- 8. PORTUGUÊS -->
+            <div id="pane-pt" class="lang-pane">
+                <div class="badge-category">Legal e Conformidade</div>
+                <h1>Política de Privacidade</h1>
+                <p class="meta-info">Aplicativo: Pet Paint (com.lia.petpaint) • Estúdio: LIA Studio • Última atualização: Novembro de 2026</p>
+                <div class="summary-callout">
+                    <p><strong>Pet Paint</strong> foi criado para crianças de 3 a 5 anos. <strong>NÃO coletamos, armazenamos nem compartilhamos dados pessoais (PII).</strong> 100% gratuito, <strong>sem anúncios, sem compras no app e sem permissões de dispositivo</strong>.</p>
+                </div>
+                <section><h2>1. Zero Coleta de Dados</h2><p>Todo o progresso fica salvo apenas no dispositivo local, em total conformidade com a LGPD, COPPA e Google Play Families.</p></section>
+                <section><h2>2. Contato</h2><p>Suporte: <strong>holaneuri@gmail.com</strong></p></section>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 LIA Studio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function switchLang(lang) {
+            const langSelect = document.getElementById('langSelect');
+            if (langSelect && langSelect.value !== lang) langSelect.value = lang;
+            document.querySelectorAll('.lang-pane').forEach(p => p.classList.remove('active'));
+            const targetPane = document.getElementById('pane-' + lang) || document.getElementById('pane-en');
+            if (targetPane) targetPane.classList.add('active');
+            document.body.classList.remove('lang-ko', 'lang-ja', 'lang-zh');
+            if (lang === 'ko') document.body.classList.add('lang-ko');
+            else if (lang === 'ja') document.body.classList.add('lang-ja');
+            else if (lang.startsWith('zh')) document.body.classList.add('lang-zh');
+            localStorage.setItem('lia_studio_lang', lang);
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const rawLang = (navigator.language || 'en').toLowerCase();
+            let autoLang = 'en';
+            if (rawLang.startsWith('ko')) autoLang = 'ko';
+            else if (rawLang.includes('cn') || rawLang.includes('hans')) autoLang = 'zh-CN';
+            else if (rawLang.includes('tw') || rawLang.includes('hk') || rawLang.includes('hant') || rawLang.startsWith('zh')) autoLang = 'zh-TW';
+            else if (rawLang.startsWith('ja')) autoLang = 'ja';
+            else if (rawLang.startsWith('de')) autoLang = 'de';
+            else if (rawLang.startsWith('es')) autoLang = 'es';
+            else if (rawLang.startsWith('pt')) autoLang = 'pt';
+            switchLang(localStorage.getItem('lia_studio_lang') || autoLang);
+        });
+    </script>
+</body>
+</html>

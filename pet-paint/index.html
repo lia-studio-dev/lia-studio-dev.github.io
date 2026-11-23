@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Paint - Interactive Coloring & Pet Playground for Toddlers | LIA Studio</title>
+    <meta name="description" content="100% Free, Ad-Free, No In-App Purchases! Interactive coloring & living pet playground designed for toddlers aged 3–5. Color 40 adorable pets & objects and watch them come alive!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #F4F8F6;
+            --bg-gradient: linear-gradient(150deg, #F4F8F6 0%, #FAFDFB 45%, #EDF4F1 100%);
+            --surface-white: #FFFFFF;
+            --surface-subtle: #F8FAF9;
+            --border-soft: #E0EBE6;
+            --text-heading: #112A24;
+            --text-body: #334D46;
+            --text-muted: #6B857E;
+            --sage-primary: #0D9488;
+            --sage-dark: #0F766E;
+            --sage-light: #E6F7F5;
+            --amber-gold: #D97706;
+            --shadow-card: 0 12px 35px rgba(13, 148, 136, 0.06), 0 2px 8px rgba(13, 148, 136, 0.03);
+            --shadow-hover: 0 20px 45px rgba(13, 148, 136, 0.12), 0 4px 14px rgba(13, 148, 136, 0.06);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-body);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.65;
+        }
+        body.lang-ko { font-family: 'Noto Sans KR', 'Plus Jakarta Sans', sans-serif; }
+        body.lang-ja { font-family: 'Noto Sans JP', 'Plus Jakarta Sans', sans-serif; }
+        body.lang-zh { font-family: 'Noto Sans TC', 'Plus Jakarta Sans', sans-serif; }
+        .ambient-glow { position: fixed; width: 600px; height: 600px; border-radius: 50%; pointer-events: none; z-index: 0; filter: blur(110px); }
+        .glow-1 { top: -150px; left: -150px; background: radial-gradient(circle, rgba(13, 148, 136, 0.09) 0%, rgba(20, 184, 166, 0.04) 60%, transparent 80%); }
+        .glow-2 { bottom: -150px; right: -150px; background: radial-gradient(circle, rgba(217, 119, 6, 0.06) 0%, rgba(230, 247, 245, 0.3) 60%, transparent 80%); }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 1; }
+        nav {
+            position: sticky; top: 0; z-index: 1000; padding: 1.25rem 0;
+            background: rgba(244, 249, 246, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            margin: 0 -1.5rem; padding-left: 1.5rem; padding-right: 1.5rem;
+        }
+        .nav-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .back-to-portal {
+            display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.85rem; font-weight: 700;
+            color: var(--sage-primary); text-decoration: none; background: var(--sage-light);
+            padding: 0.35rem 0.85rem; border-radius: 9999px; transition: all 0.2s ease;
+        }
+        .back-to-portal:hover { background: var(--sage-primary); color: #FFFFFF; }
+        .nav-actions { display: flex; align-items: center; gap: 1rem; margin-left: auto; }
+        .mobile-menu-btn { display: none; background: none; border: none; color: var(--text-heading); cursor: pointer; padding: 0.25rem; align-items: center; justify-content: center; }
+        .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-heading); font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.25rem; }
+        .nav-logo img { width: 40px; height: 40px; border-radius: 12px; border: 2px solid var(--surface-white); box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25); }
+        .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 0.65rem; }
+        .nav-links a { color: var(--text-body); text-decoration: none; font-size: 0.925rem; font-weight: 700; transition: color 0.2s ease; }
+        .nav-links a:hover { color: var(--sage-primary); }
+        .nav-lang-selector { display: flex; align-items: center; gap: 0.4rem; background: rgba(255, 255, 255, 0.8); border: 1px solid var(--border-soft); padding: 0.35rem 0.75rem; border-radius: 999px; }
+        .lang-select-box { background: transparent; border: none; color: var(--text-heading); font-size: 0.85rem; font-weight: 700; cursor: pointer; outline: none; font-family: inherit; }
+        .hero { text-align: center; padding: 4.5rem 0 3.5rem; }
+        .app-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem; background: var(--sage-light);
+            border: 1px solid rgba(13, 148, 136, 0.3); color: var(--sage-dark);
+            padding: 0.45rem 1.25rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 800; margin-bottom: 1.5rem;
+        }
+        .hero-title { font-family: 'Outfit', sans-serif; font-size: clamp(2.4rem, 5.5vw, 3.8rem); font-weight: 900; line-height: 1.2; letter-spacing: -0.02em; color: var(--text-heading); margin-bottom: 1.25rem; }
+        .hero-title .highlight { background: linear-gradient(135deg, #0D9488 0%, #D97706 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-desc { font-size: 1.15rem; color: var(--text-body); max-width: 720px; margin: 0 auto 2.5rem; line-height: 1.75; }
+        .hero-visual { display: flex; flex-direction: column; align-items: center; gap: 1.75rem; margin-bottom: 2.25rem; }
+        .main-icon-art {
+            width: 150px; height: 150px; border-radius: 36px;
+            box-shadow: 0 20px 45px rgba(13, 148, 136, 0.25), 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 4px solid var(--surface-white); animation: float 4s ease-in-out infinite;
+        }
+        .splash-showcase {
+            width: 100%; max-width: 760px; border-radius: 28px;
+            box-shadow: var(--shadow-hover); border: 4px solid var(--surface-white);
+        }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 0.75rem;
+            background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%); color: #FFFFFF;
+            padding: 1rem 2.25rem; border-radius: 1rem; text-decoration: none;
+            font-weight: 700; font-size: 1.05rem; box-shadow: 0 10px 25px rgba(13, 148, 136, 0.35); transition: all 0.2s ease;
+        }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(13, 148, 136, 0.45); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; padding: 3.5rem 0; border-top: 1px solid var(--border-soft); }
+        .feature-box { background: var(--surface-white); border: 1px solid var(--border-soft); border-radius: 1.5rem; padding: 2.25rem 1.75rem; box-shadow: var(--shadow-card); transition: all 0.25s ease; }
+        .feature-box:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--sage-primary); }
+        .feature-emoji { font-size: 2.25rem; margin-bottom: 1rem; }
+        .feature-heading { font-size: 1.2rem; font-weight: 800; color: var(--text-heading); margin-bottom: 0.5rem; }
+        .feature-text { color: var(--text-body); font-size: 0.93rem; line-height: 1.65; }
+        .lineup-section { padding: 4.5rem 0 5rem; border-top: 1px solid var(--border-soft); }
+        .category-tag-center { text-align: center; margin-bottom: 1rem; }
+        .section-heading { font-family: 'Outfit', sans-serif; font-size: 2.35rem; font-weight: 900; color: var(--text-heading); text-align: center; margin-bottom: 3rem; }
+        .lineup-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+        .lineup-card { background: var(--surface-white); border: 1px solid var(--border-soft); border-radius: 1.5rem; padding: 2rem; box-shadow: var(--shadow-card); transition: all 0.25s ease; }
+        .lineup-card:hover { transform: translateY(-6px); border-color: var(--sage-primary); box-shadow: var(--shadow-hover); }
+        .lineup-tag { display: inline-block; background: var(--sage-primary); color: #fff; font-size: 0.78rem; font-weight: 800; padding: 0.25rem 0.75rem; border-radius: 9999px; margin-bottom: 0.85rem; }
+        .lineup-title { font-size: 1.2rem; font-weight: 800; color: var(--text-heading); margin-bottom: 0.5rem; }
+        .lineup-desc { font-size: 0.94rem; color: var(--text-body); line-height: 1.65; }
+        footer { border-top: 1px solid var(--border-soft); padding: 3.5rem 0 2.5rem; text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 2rem; }
+        .footer-nav { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .footer-nav a { color: var(--text-body); text-decoration: none; font-weight: 600; transition: color 0.2s ease; }
+        .footer-nav a:hover { color: var(--sage-primary); }
+        .copyright { color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem; }
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: flex; }
+            .nav-links { display: none; width: 100%; flex-direction: column; gap: 0.5rem; padding: 1.5rem 0 0 0; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 1rem; }
+            .nav-links.active { display: flex; }
+            .nav-links a { display: block; width: 100%; text-align: center; background: rgba(13, 148, 136, 0.05); padding: 0.75rem 0; border-radius: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <div class="container">
+        <nav>
+            <div class="nav-header">
+                <a href="../index.html" class="back-to-portal" data-i18n="nav_back_portal">← LIA Studio Portal</a>
+                <a href="index.html" class="nav-logo">
+                    <img src="assets/icon.png" alt="Pet Paint Icon">
+                    <span>Pet Paint</span>
+                </a>
+                <div class="nav-actions">
+                    <div class="nav-lang-selector">
+                        <span class="lang-icon">🌐</span>
+                        <select id="langSelect" class="lang-select-box" onchange="setLang(this.value)">
+                            <option value="en">English</option>
+                            <option value="ko">한국어</option>
+                            <option value="ja">日本語</option>
+                            <option value="zh-CN">简体中文</option>
+                            <option value="zh-TW">繁體中文</option>
+                            <option value="de">Deutsch</option>
+                            <option value="es">Español</option>
+                            <option value="pt">Português</option>
+                        </select>
+                    </div>
+                    <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle Menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#features" data-i18n="nav_features" onclick="closeMenu()">Features</a>
+                <a href="#lineup" data-i18n="nav_lineup" onclick="closeMenu()">40 Templates</a>
+                <a href="privacy.html" data-i18n="nav_privacy" onclick="closeMenu()">Privacy Policy</a>
+                <a href="terms.html" data-i18n="nav_terms" onclick="closeMenu()">Terms</a>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <div class="app-badge" data-i18n="hero_badge">🎨 100% Free • Ages 3–5 • Interactive Coloring Playground</div>
+            <h1 class="hero-title" data-i18n="hero_title">Color Cute Pets & Watch Them<br><span class="highlight">Come Alive in Your Playground!</span></h1>
+            <p class="hero-desc" data-i18n="hero_desc">
+                Designed specifically for toddlers aged 3–5 with a 100% No-Text interface. Color 40 adorable puppies, kittens, pet toys, weather, and garden friends using smart spill-free crayons, buckets, and stickers — then tap and play with every creation in a living meadow!
+            </p>
+            <div class="hero-visual">
+                <img src="assets/icon.png" alt="Pet Paint App Icon" class="main-icon-art">
+                <img src="assets/splash.png" alt="Pet Paint Playground Showcase" class="splash-showcase">
+            </div>
+            <div>
+                <a href="https://play.google.com/store/apps/details?id=com.lia.petpaint" target="_blank" rel="noopener" class="cta-btn">
+                    <span data-i18n="hero_cta">Google Play Store (Free)</span>
+                </a>
+            </div>
+        </header>
+
+        <section id="features" class="features-grid">
+            <div class="feature-box">
+                <div class="feature-emoji">🎁</div>
+                <h3 class="feature-heading" data-i18n="feat_1_title">100% Free • Zero Ads & No IAP</h3>
+                <p class="feature-text" data-i18n="feat_1_desc">All 40 coloring templates and interactions are completely free. No ads, no popups, no in-app purchases, and zero data collection.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-emoji">🖍️</div>
+                <h3 class="feature-heading" data-i18n="feat_2_title">Smart Stay-in-Lines Coloring</h3>
+                <p class="feature-text" data-i18n="feat_2_desc">Paint bucket, stay-in-the-lines crayon, rainbow brush, and 3D sticker stamps let little fingers color confidently without frustration.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-emoji">🐾</div>
+                <h3 class="feature-heading" data-i18n="feat_3_title">Living Interactive Playground</h3>
+                <p class="feature-text" data-i18n="feat_3_desc">Every colored puppy, kitten, and prop comes alive! Climb cat towers, chase yarn balls, take bubble baths, light birthday candles, and switch day & night.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-emoji">🛡️</div>
+                <h3 class="feature-heading" data-i18n="feat_4_title">Offline & Kid-Safe Design</h3>
+                <p class="feature-text" data-i18n="feat_4_desc">Works 100% offline with zero device permissions. Equipped with a Parent Gate for data reset and intuitive No-Text visual controls.</p>
+            </div>
+        </section>
+
+        <section id="lineup" class="lineup-section">
+            <div class="category-tag-center">
+                <span class="app-badge" data-i18n="lineup_tag">All 40 Templates Free</span>
+            </div>
+            <h2 class="section-heading" data-i18n="lineup_heading">40 Interactive Friends & Props</h2>
+            <div class="lineup-grid">
+                <div class="lineup-card">
+                    <span class="lineup-tag">10 Puppies</span>
+                    <h4 class="lineup-title" data-i18n="cat_1_title">🐶 10 Adorable Puppy Breeds</h4>
+                    <p class="lineup-desc" data-i18n="cat_1_desc">Corgi, Retriever, Poodle, Husky, Dachshund, Bichon, Coton, Cavalier, Shiba, and Maltese — each with its own unique bark and playful walk!</p>
+                </div>
+                <div class="lineup-card">
+                    <span class="lineup-tag">10 Kittens</span>
+                    <h4 class="lineup-title" data-i18n="cat_2_title">🐱 10 Sweet Kitten Breeds</h4>
+                    <p class="lineup-desc" data-i18n="cat_2_desc">Cheese Tabby, Russian Blue, Persian, Calico, Siamese, Scottish Fold, Tuxedo, Munchkin, Bengal, and British Shorthair — purring, leaping, and playing!</p>
+                </div>
+                <div class="lineup-card">
+                    <span class="lineup-tag">9 Pet Props</span>
+                    <h4 class="lineup-title" data-i18n="cat_3_title">🎂 Interactive Pet Toys & Props</h4>
+                    <p class="lineup-desc" data-i18n="cat_3_desc">Pet Bowl, Cat Tower, Yarn Ball, Bubble Bathtub, Cozy Cushion, Birthday Cake, Dog House, Toy Ball, and Balloons — every single one reacts uniquely!</p>
+                </div>
+                <div class="lineup-card">
+                    <span class="lineup-tag">11 Sky & Garden</span>
+                    <h4 class="lineup-title" data-i18n="cat_4_title">🌈 Magic Weather & Garden</h4>
+                    <p class="lineup-desc" data-i18n="cat_4_desc">Sun & Moon (day/night toggle), Rain & Snow Clouds, Rainbow xylophone, Butterfly, Apple Tree, Flower, Dandelion, and lucky Clover!</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-nav">
+                <a href="../index.html" data-i18n="nav_back_portal">← LIA Studio</a>
+                <a href="index.html" data-i18n="nav_home">Home</a>
+                <a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a>
+                <a href="terms.html" data-i18n="nav_terms">Terms of Service</a>
+            </div>
+            <p><strong>LIA Studio (Luz Interactive Application)</strong></p>
+            <p>Support: <a href="mailto:holaneuri@gmail.com" style="color:var(--sage-primary); text-decoration:none; font-weight:700;">holaneuri@gmail.com</a></p>
+            <p class="copyright">&copy; 2026 LIA Studio. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const i18n = {
+            en: {
+                nav_back_portal: "← LIA Studio",
+                nav_home: "Home",
+                nav_features: "Features",
+                nav_lineup: "40 Templates",
+                nav_privacy: "Privacy Policy",
+                nav_terms: "Terms of Service",
+                hero_badge: "🎨 100% Free • Ages 3–5 • Interactive Coloring Playground",
+                hero_title: "Color Cute Pets & Watch Them<br><span class=\"highlight\">Come Alive in Your Playground!</span>",
+                hero_desc: "Designed specifically for toddlers aged 3–5 with a 100% No-Text interface. Color 40 adorable puppies, kittens, pet toys, weather, and garden friends using smart spill-free crayons, buckets, and stickers — then tap and play with every creation in a living meadow!",
+                hero_cta: "Google Play Store (Free)",
+                feat_1_title: "100% Free • Zero Ads & No IAP",
+                feat_1_desc: "All 40 coloring templates and interactions are completely free. No ads, no popups, no in-app purchases, and zero data collection.",
+                feat_2_title: "Smart Stay-in-Lines Coloring",
+                feat_2_desc: "Paint bucket, stay-in-the-lines crayon, rainbow brush, and 3D sticker stamps let little fingers color confidently without frustration.",
+                feat_3_title: "Living Interactive Playground",
+                feat_3_desc: "Every colored puppy, kitten, and prop comes alive! Climb cat towers, chase yarn balls, take bubble baths, light birthday candles, and switch day & night.",
+                feat_4_title: "Offline & Kid-Safe Design",
+                feat_4_desc: "Works 100% offline with zero device permissions. Equipped with a Parent Gate for data reset and intuitive No-Text visual controls.",
+                lineup_tag: "All 40 Templates Free",
+                lineup_heading: "40 Interactive Friends & Props",
+                cat_1_title: "🐶 10 Adorable Puppy Breeds",
+                cat_1_desc: "Corgi, Retriever, Poodle, Husky, Dachshund, Bichon, Coton, Cavalier, Shiba, and Maltese — each with its own unique bark and playful walk!",
+                cat_2_title: "🐱 10 Sweet Kitten Breeds",
+                cat_2_desc: "Cheese Tabby, Russian Blue, Persian, Calico, Siamese, Scottish Fold, Tuxedo, Munchkin, Bengal, and British Shorthair — purring, leaping, and playing!",
+                cat_3_title: "🎂 Interactive Pet Toys & Props",
+                cat_3_desc: "Pet Bowl, Cat Tower, Yarn Ball, Bubble Bathtub, Cozy Cushion, Birthday Cake, Dog House, Toy Ball, and Balloons — every single one reacts uniquely!",
+                cat_4_title: "🌈 Magic Weather & Garden",
+                cat_4_desc: "Sun & Moon (day/night toggle), Rain & Snow Clouds, Rainbow xylophone, Butterfly, Apple Tree, Flower, Dandelion, and lucky Clover!"
+            },
+            ko: {
+                nav_back_portal: "← LIA Studio",
+                nav_home: "홈",
+                nav_features: "특징",
+                nav_lineup: "40종 도안",
+                nav_privacy: "개인정보처리방침",
+                nav_terms: "이용약관",
+                hero_badge: "🎨 100% 무료 • 3~5세 유아 맞춤 • 인터랙티브 색칠 놀이터",
+                hero_title: "직접 색칠한 강아지·고양이가<br><span class=\"highlight\">살아 움직이는 마법 놀이터!</span>",
+                hero_desc: "글자를 몰라도 혼자 즐길 수 있는 100% 노텍스트(No-Text) 유아 색칠 앱! 선 밖으로 나가지 않는 스마트 크레파스·페인트통·스탬프로 40종의 강아지·고양이·펫 소품·날씨를 색칠하고, 살아 움직이는 초원에서 톡톡 놀아보세요!",
+                hero_cta: "Google Play 다운로드 (무료)",
+                feat_1_title: "100% 무료 • 무광고 & 무과금",
+                feat_1_desc: "40종 모든 도안과 인터랙션이 완전 무료! 광고, 팝업, 인앱결제, 개인정보 수집이 일절 없는 청정 유아 앱입니다.",
+                feat_2_title: "선 이탈 방지 스마트 색칠",
+                feat_2_desc: "페인트통, 선 밖으로 안 나가는 스마트 색연필, 무지개 브러시, 귀여운 스탬프로 3~5세 아이도 자신감 있게 색칠합니다.",
+                feat_3_title: "40종 전원 살아 움직이는 놀이터",
+                feat_3_desc: "캣타워 점프, 털실 냥냥펀치, 거품 목욕 물털기, 생일 케이크 촛불 끄기, 낮과 밤 전환까지 모든 오브젝트가 반응합니다!",
+                feat_4_title: "100% 오프라인 & 무권한 안심 설계",
+                feat_4_desc: "기기 권한을 전혀 요구하지 않으며 비행기·차 안에서도 오프라인으로 안전하게 즐길 수 있습니다.",
+                lineup_tag: "40종 전체 무료 개방",
+                lineup_heading: "40종의 살아있는 펫 & 소품 라인업",
+                cat_1_title: "🐶 귀여운 강아지 10종",
+                cat_1_desc: "코기, 리트리버, 푸들, 허스키, 닥스훈트, 비숑, 꼬똥, 카발리에, 시바, 말티즈 — 각 견종별 고유한 짖는 소리와 귀여운 움직임!",
+                cat_2_title: "🐱 사랑스러운 고양이 10종",
+                cat_2_desc: "치즈태비, 러시안블루, 페르시안, 삼색이, 샴, 스코티시폴드, 턱시도, 먼치킨, 뱅갈, 브리티시 — 저마다 다른 야옹 소리와 애교!",
+                cat_3_title: "🎂 인터랙티브 펫 소품 9종",
+                cat_3_desc: "밥그릇, 미니 캣타워, 털실 뭉치, 거품 욕조, 펫 방석, 생일 케이크, 강아지 집, 장난감 공, 풍선 — 탭하고 드래그하면 신나는 반응!",
+                cat_4_title: "🌈 마법 날씨 & 정원 11종",
+                cat_4_desc: "해와 달(낮/밤 전환), 비구름·눈구름, 무지개 실로폰, 나비, 사과나무, 꽃, 민들레 홀씨, 행운의 클로버까지!"
+            },
+            ja: {
+                nav_back_portal: "← LIA Studio",
+                nav_home: "ホーム",
+                nav_features: "特徴",
+                nav_lineup: "全40種の塗り絵",
+                nav_privacy: "プライバシーポリシー",
+                nav_terms: "利用規約",
+                hero_badge: "🎨 完全無料 • 3〜5歳向け • インタラクティブ塗り絵＆ペット遊び場",
+                hero_title: "自分で塗った子犬・子猫が<br><span class=\"highlight\">草原で生き生きと動き出す！</span>",
+                hero_desc: "文字が読めなくても遊べる100%ノーテキスト幼児向け塗り絵アプリ！はみ出さないスマートクレヨン・バケツ・3Dスタンプで40種類のペットやおもちゃを塗って、不思議な草原でタップして遊ぼう！",
+                hero_cta: "Google Play ストア（無料）",
+                feat_1_title: "完全無料 • 広告ゼロ＆課金なし",
+                feat_1_desc: "全40種の塗り絵と仕掛けがすべて無料。広告・ポップアップ・アプリ内課金・データ収集は一切ありません。",
+                feat_2_title: "はみ出さないスマート塗り絵",
+                feat_2_desc: "塗りつぶしバケツ、線をはみ出さないクレヨン、レインボーブラシ、3Dスタンプで小さな指でも楽しく塗れます。",
+                feat_3_title: "全40種が反応する遊び場",
+                feat_3_desc: "キャットタワー登り、毛糸玉パンチ、泡風呂の水しぶき、誕生日ケーキのろうそく消し、昼夜切替まで盛りだくさん！",
+                feat_4_title: "100%オフライン＆安心設計",
+                feat_4_desc: "端末権限ゼロで完全オフライン動作。データ初期化には保護者確認ゲートを搭載しています。",
+                lineup_tag: "全40種すべて無料",
+                lineup_heading: "40種の動くペット＆おもちゃ",
+                cat_1_title: "🐶 かわいい子犬 10種",
+                cat_1_desc: "コーギー、レトリバー、プードル、ハスキー、ダックスフンド、ビション、コトン、キャバリア、柴犬、マルチーズ — 犬種ごとの鳴き声付き！",
+                cat_2_title: "🐱 愛らしい子猫 10種",
+                cat_2_desc: "茶トラ、ロシアンブルー、ペルシャ、三毛猫、シャム、スコティッシュフォールド、タキシード、マンチカン、ベンガル、ブリティッシュ！",
+                cat_3_title: "🎂 インタラクティブ小物 9種",
+                cat_3_desc: "ごはん皿、ミニキャットタワー、毛糸玉、泡のお風呂、ふわふわクッション、誕生日ケーキ、犬小屋、ボール、風船！",
+                cat_4_title: "🌈 魔法の天気＆お庭 11種",
+                cat_4_desc: "太陽と月（昼夜切替）、雨雲・雪雲、虹の木琴、チョウチョ、りんごの木、お花、たんぽぽの綿毛、幸運のクローバー！"
+            },
+            "zh-CN": {
+                nav_back_portal: "← LIA Studio 官网",
+                nav_home: "首页",
+                nav_features: "游戏特色",
+                nav_lineup: "40种涂色模板",
+                nav_privacy: "隐私政策",
+                nav_terms: "服务条款",
+                hero_badge: "🎨 100% 免费 • 3～5岁幼儿 • 互动涂色宠物乐园",
+                hero_title: "亲手涂色的小狗与小猫<br><span class=\"highlight\">在魔法草地上活灵活现！</span>",
+                hero_desc: "专为3～5岁幼儿打造的100%无文字界面！使用防越界智能蜡笔、油漆桶与3D贴纸为40种可爱宠物、玩具与天气上色，点击草地上的每件作品都能触发奇妙互动！",
+                hero_cta: "Google Play 免费下载",
+                feat_1_title: "100% 免费 • 无广告无内购",
+                feat_1_desc: "全部40种模板与互动玩法完全免费。无广告、无弹窗、无应用内购买、零数据收集。",
+                feat_2_title: "智能防越界轻松涂色",
+                feat_2_desc: "油漆桶一键填色、不出线智能蜡笔、彩虹画笔与3D贴纸印章，让小宝宝自信涂色零挫折。",
+                feat_3_title: "40种全互动魔法乐园",
+                feat_3_desc: "爬猫爬架、追毛线球、泡泡浴甩水、吹生日蜡烛许愿、日月昼夜切换，每样都有惊喜反应！",
+                feat_4_title: "100% 离线 & 零权限安心设计",
+                feat_4_desc: "无需任何设备权限即可离线畅玩，并配备家长安全锁防止误删画作。",
+                lineup_tag: "40种模板全部免费",
+                lineup_heading: "40种互动宠物与奇妙道具",
+                cat_1_title: "🐶 10种可爱小狗",
+                cat_1_desc: "柯基、金毛、贵宾、哈士奇、腊肠、比熊、棉花面纱犬、骑士查理王、柴犬、马尔济斯，每种都有专属叫声！",
+                cat_2_title: "🐱 10种萌趣小猫",
+                cat_2_desc: "橘猫、俄蓝、波斯、三花、暹罗、折耳、奶牛、曼基康、孟加拉、英短，活泼爱撒娇！",
+                cat_3_title: "🎂 9种互动宠物道具",
+                cat_3_desc: "宠物饭碗、迷你猫爬架、毛线球、泡泡浴缸、软绵绵垫子、生日蛋糕、小狗屋、玩具球与彩色气球！",
+                cat_4_title: "🌈 11种魔法天气与花园",
+                cat_4_desc: "太阳与月亮（昼夜切换）、雨云与雪云、彩虹木琴、蝴蝶、苹果树、鲜花、蒲公英与幸运四叶草！"
+            },
+            "zh-TW": {
+                nav_back_portal: "← LIA Studio 官網",
+                nav_home: "首頁",
+                nav_features: "遊戲特色",
+                nav_lineup: "40種著色範本",
+                nav_privacy: "隱私權政策",
+                nav_terms: "服務條款",
+                hero_badge: "🎨 100% 免費 • 3～5歲幼兒 • 互動著色寵物樂園",
+                hero_title: "親手著色的小狗與小貓<br><span class=\"highlight\">在魔法草地上活靈活現！</span>",
+                hero_desc: "專為3～5歲幼兒打造的100%無文字介面！使用防越界智慧蠟筆、油漆桶與3D貼紙為40種可愛寵物、玩具與天氣上色，點擊草地上的每件作品都能觸發奇妙互動！",
+                hero_cta: "Google Play 免費下載",
+                feat_1_title: "100% 免費 • 無廣告無內購",
+                feat_1_desc: "全部40種範本與互動玩法完全免費。無廣告、無彈窗、無應用程式內購買、零資料收集。",
+                feat_2_title: "智慧防越界輕鬆著色",
+                feat_2_desc: "油漆桶一鍵填色、不出線智慧蠟筆、彩虹畫筆與3D貼紙印章，讓小寶寶自信著色零挫折。",
+                feat_3_title: "40種全互動魔法樂園",
+                feat_3_desc: "爬貓跳台、追毛線球、泡泡浴甩水、吹生日蠟燭許願、日月晝夜切換，每樣都有驚喜反應！",
+                feat_4_title: "100% 離線 & 零權限安心設計",
+                feat_4_desc: "無需任何裝置權限即可離線暢玩，並配備家長安全鎖防止誤刪畫作。",
+                lineup_tag: "40種範本全部免費",
+                lineup_heading: "40種互動寵物與奇妙道具",
+                cat_1_title: "🐶 10種可愛小狗",
+                cat_1_desc: "柯基、黃金獵犬、貴賓、哈士奇、臘腸、比熊、棉花面紗犬、查理王、柴犬、馬爾濟斯，每種都有專屬叫聲！",
+                cat_2_title: "🐱 10種萌趣小貓",
+                cat_2_desc: "橘貓、俄藍、波斯、三花、暹羅、摺耳、賓士、曼赤肯、孟加拉、英短，活潑愛撒嬌！",
+                cat_3_title: "🎂 9種互動寵物道具",
+                cat_3_desc: "寵物飯碗、迷你貓跳台、毛線球、泡泡浴缸、軟綿綿墊子、生日蛋糕、小狗屋、玩具球與彩色氣球！",
+                cat_4_title: "🌈 11種魔法天氣與花園",
+                cat_4_desc: "太陽與月亮（晝夜切換）、雨雲與雪雲、彩虹木琴、蝴蝶、蘋果樹、鮮花、蒲公英與幸運四葉草！"
+            },
+            de: {
+                nav_back_portal: "← LIA Studio",
+                nav_home: "Startseite",
+                nav_features: "Funktionen",
+                nav_lineup: "40 Vorlagen",
+                nav_privacy: "Datenschutz",
+                nav_terms: "Nutzungsbedingungen",
+                hero_badge: "🎨 100% Kostenlos • 3–5 Jahre • Interaktiver Mal- & Haustier-Spielplatz",
+                hero_title: "Male süße Haustiere aus und<br><span class=\"highlight\">erlebe, wie sie lebendig werden!</span>",
+                hero_desc: "Speziell für Kleinkinder von 3 bis 5 Jahren mit einer 100% textfreien Oberfläche. Male 40 niedliche Welpen, Kätzchen, Spielzeuge und Wetterfreunde aus und spiele mit ihnen auf der Wiese!",
+                hero_cta: "Google Play Store (Kostenlos)",
+                feat_1_title: "100% Kostenlos • Werbefrei & ohne Käufe",
+                feat_1_desc: "Alle 40 Malvorlagen und Interaktionen sind komplett kostenlos. Keine Werbung, keine In-App-Käufe, keine Datenerfassung.",
+                feat_2_title: "Intelligentes Malen innerhalb der Linien",
+                feat_2_desc: "Farbeimer, Linien-sicherer Malstift, Regenbogenpinsel und 3D-Stempel sorgen für frustfreien Malspaß.",
+                feat_3_title: "Lebendiger interaktiver Spielplatz",
+                feat_3_desc: "Kratzbaum klettern, Wollknäuel jagen, Schaumbad mit Abschütteln, Geburtstagskerzen auspusten sowie Tag & Nacht wechseln!",
+                feat_4_title: "100% Offline & kindersicher",
+                feat_4_desc: "Funktioniert komplett offline ohne Geräteberechtigungen und mit Eltern-Schutzcode zum Zurücksetzen.",
+                lineup_tag: "Alle 40 Vorlagen kostenlos",
+                lineup_heading: "40 interaktive Freunde & Spielzeuge",
+                cat_1_title: "🐶 10 niedliche Hunderassen",
+                cat_1_desc: "Corgi, Retriever, Pudel, Husky, Dackel, Bichon, Coton, Cavalier, Shiba und Malteser – jeder mit eigener Stimme!",
+                cat_2_title: "🐱 10 süße Katzenrassen",
+                cat_2_desc: "Tigerkatze, Russisch Blau, Perser, Glückskatze, Siam, Scottish Fold, Tuxedo, Munchkin, Bengal und Britisch Kurzhaar!",
+                cat_3_title: "🎂 9 interaktive Haustier-Spielzeuge",
+                cat_3_desc: "Futternapf, Mini-Kratzbaum, Wollknäuel, Schaumbad, Kuschelkissen, Geburtstagstorte, Hundehütte, Ball und Luftballons!",
+                cat_4_title: "🌈 Magisches Wetter & Garten",
+                cat_4_desc: "Sonne & Mond (Tag/Nacht), Regen- & Schneewolken, Regenbogen-Xylophon, Schmetterling, Apfelbaum, Blumen, Pusteblume & Klee!"
+            },
+            es: {
+                nav_back_portal: "← LIA Studio",
+                nav_home: "Inicio",
+                nav_features: "Características",
+                nav_lineup: "40 Plantillas",
+                nav_privacy: "Privacidad",
+                nav_terms: "Términos",
+                hero_badge: "🎨 100% Gratis • 3–5 Años • Colorear y Parque de Mascotas",
+                hero_title: "¡Colorea lindas mascotas y<br><span class=\"highlight\">míralas cobrar vida al instante!</span>",
+                hero_desc: "Diseñado especialmente para niños de 3 a 5 años con una interfaz 100% sin texto. Colorea 40 adorables cachorros, gatitos, juguetes y elementos del clima, ¡y juega con cada creación en la pradera!",
+                hero_cta: "Google Play Store (Gratis)",
+                feat_1_title: "100% Gratis • Sin Anuncios ni Compras",
+                feat_1_desc: "Las 40 plantillas e interacciones son completamente gratuitas. Sin anuncios, sin compras integradas y cero recopilación de datos.",
+                feat_2_title: "Coloreado Inteligente sin Salirse",
+                feat_2_desc: "Cubo de pintura, crayón que respeta las líneas, pincel arcoíris y sellos 3D para pintar con confianza y diversión.",
+                feat_3_title: "Parque Vivo e Interactivo",
+                feat_3_desc: "¡Trepar al rascador, perseguir ovillos de lana, baños de burbujas, soplar velas de cumpleaños y cambiar el día y la noche!",
+                feat_4_title: "100% Sin Conexión y Seguro",
+                feat_4_desc: "Funciona totalmente sin internet ni permisos de dispositivo, con puerta parental para reiniciar datos.",
+                lineup_tag: "40 Plantillas 100% Gratis",
+                lineup_heading: "40 Amigos y Juguetes Interactivos",
+                cat_1_title: "🐶 10 Adorables Razas de Cachorros",
+                cat_1_desc: "Corgi, Retriever, Caniche, Husky, Salchicha, Bichón, Cotón, Cavalier, Shiba y Maltés — ¡cada uno con su propio ladrido!",
+                cat_2_title: "🐱 10 Dulces Razas de Gatitos",
+                cat_2_desc: "Atigrado, Azul Ruso, Persa, Calicó, Siamés, Scottish Fold, Esmoquin, Munchkin, Bengala y Británico de Pelo Corto!",
+                cat_3_title: "🎂 9 Juguetes y Accesorios Interactivos",
+                cat_3_desc: "Plato de comida, rascador, ovillo de lana, bañera de burbujas, cojín, pastel de cumpleaños, casita, pelota y globos!",
+                cat_4_title: "🌈 Clima Mágico y Jardín",
+                cat_4_desc: "Sol y Luna (día/noche), nubes de lluvia y nieve, xilófono arcoíris, mariposa, manzano, flores, diente de león y trébol!"
+            },
+            pt: {
+                nav_back_portal: "← LIA Studio",
+                nav_home: "Início",
+                nav_features: "Recursos",
+                nav_lineup: "40 Desenhos",
+                nav_privacy: "Privacidade",
+                nav_terms: "Termos",
+                hero_badge: "🎨 100% Grátis • 3–5 Anos • Colorir e Parque de Pets",
+                hero_title: "Pinte pets fofos e veja cada um<br><span class=\"highlight\">ganhar vida no seu parque!</span>",
+                hero_desc: "Feito especialmente para crianças de 3 a 5 anos com interface 100% sem texto. Pinte 40 cachorrinhos, gatinhos, brinquedos e elementos da natureza com giz inteligente — e brinque com todos no jardim!",
+                hero_cta: "Google Play Store (Grátis)",
+                feat_1_title: "100% Grátis • Sem Anúncios e Sem Compras",
+                feat_1_desc: "Todos os 40 desenhos e interações são totalmente gratuitos. Sem anúncios, sem compras no app e zero coleta de dados.",
+                feat_2_title: "Colorir Inteligente Dentro da Linha",
+                feat_2_desc: "Balde de tinta, giz que não borra fora da linha, pincel arco-íris e carimbos 3D para pintar com alegria e facilidade.",
+                feat_3_title: "Parque Vivo e Interativo",
+                feat_3_desc: "Subir no arranhador, brincar com novelo de lã, banho de espuma, soprar velas de aniversário e alternar dia e noite!",
+                feat_4_title: "100% Offline e Seguro",
+                feat_4_desc: "Funciona totalmente offline com zero permissões de dispositivo e controle parental para reiniciar os dados.",
+                lineup_tag: "Todos os 40 Desenhos Grátis",
+                lineup_heading: "40 Amigos e Objetos Interativos",
+                cat_1_title: "🐶 10 Raças Adoráveis de Cachorrinhos",
+                cat_1_desc: "Corgi, Retriever, Poodle, Husky, Salsicha, Bichon, Coton, Cavalier, Shiba e Maltês — cada um com seu próprio latido!",
+                cat_2_title: "🐱 10 Raças Fofas de Gatinhos",
+                cat_2_desc: "Laranja, Azul Russo, Persa, Tricolor, Siamês, Scottish Fold, Frajola, Munchkin, Bengal e Pelo Curto Inglês!",
+                cat_3_title: "🎂 9 Brinquedos e Acessórios Interativos",
+                cat_3_desc: "Tigela, arranhador, novelo de lã, banheira de espuma, almofada, bolo de aniversário, casinha, bola e balões!",
+                cat_4_title: "🌈 Clima Mágico e Jardim",
+                cat_4_desc: "Sol e Lua (dia/noite), nuvens de chuva e neve, xilofone arco-íris, borboleta, macieira, flores, dente-de-leão e trevo!"
+            }
+        };
+
+        function setLang(lang) {
+            const selectEl = document.getElementById('langSelect');
+            if (selectEl && selectEl.value !== lang) selectEl.value = lang;
+            const dict = i18n[lang] || i18n['en'];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) el.innerHTML = dict[key];
+            });
+            document.body.classList.remove('lang-ko', 'lang-ja', 'lang-zh');
+            if (lang === 'ko') document.body.classList.add('lang-ko');
+            else if (lang === 'ja') document.body.classList.add('lang-ja');
+            else if (lang.startsWith('zh')) document.body.classList.add('lang-zh');
+            localStorage.setItem('lia_studio_lang', lang);
+        }
+
+        function toggleMenu() { const nl = document.getElementById('navLinks'); if (nl) nl.classList.toggle('active'); }
+        function closeMenu() { const nl = document.getElementById('navLinks'); if (nl) nl.classList.remove('active'); }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const rawLang = (navigator.language || 'en').toLowerCase();
+            let autoLang = 'en';
+            if (rawLang.startsWith('ko')) autoLang = 'ko';
+            else if (rawLang.includes('cn') || rawLang.includes('hans')) autoLang = 'zh-CN';
+            else if (rawLang.includes('tw') || rawLang.includes('hk') || rawLang.includes('hant') || rawLang.startsWith('zh')) autoLang = 'zh-TW';
+            else if (rawLang.startsWith('ja')) autoLang = 'ja';
+            else if (rawLang.startsWith('de')) autoLang = 'de';
+            else if (rawLang.startsWith('es')) autoLang = 'es';
+            else if (rawLang.startsWith('pt')) autoLang = 'pt';
+            setLang(localStorage.getItem('lia_studio_lang') || autoLang);
+        });
+    </script>
+</body>
+</html>
