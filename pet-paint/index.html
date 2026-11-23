@@ -89,6 +89,15 @@
             font-weight: 700; font-size: 1.05rem; box-shadow: 0 10px 25px rgba(13, 148, 136, 0.35); transition: all 0.2s ease;
         }
         .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(13, 148, 136, 0.45); }
+        .trailer-section { padding: 3.5rem 0 4rem; border-top: 1px solid var(--border-soft); text-align: center; }
+        .trailer-frame-wrap {
+            max-width: 860px; margin: 0 auto; aspect-ratio: 16 / 9;
+            border-radius: 24px; overflow: hidden;
+            border: 4px solid var(--surface-white);
+            box-shadow: var(--shadow-hover);
+            background: #112A24;
+        }
+        .trailer-frame-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; padding: 3.5rem 0; border-top: 1px solid var(--border-soft); }
         .feature-box { background: var(--surface-white); border: 1px solid var(--border-soft); border-radius: 1.5rem; padding: 2.25rem 1.75rem; box-shadow: var(--shadow-card); transition: all 0.25s ease; }
         .feature-box:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--sage-primary); }
@@ -153,6 +162,7 @@
                 </div>
             </div>
             <div class="nav-links" id="navLinks">
+                <a href="#trailer" data-i18n="nav_trailer" onclick="closeMenu()">Trailer</a>
                 <a href="#features" data-i18n="nav_features" onclick="closeMenu()">Features</a>
                 <a href="#lineup" data-i18n="nav_lineup" onclick="closeMenu()">40 Templates</a>
                 <a href="privacy.html" data-i18n="nav_privacy" onclick="closeMenu()">Privacy Policy</a>
@@ -176,6 +186,23 @@
                 </a>
             </div>
         </header>
+
+        <section id="trailer" class="trailer-section">
+            <div class="category-tag-center">
+                <span class="app-badge" data-i18n="trailer_tag">Official Trailer</span>
+            </div>
+            <h2 class="section-heading" data-i18n="trailer_heading">Watch Pet Paint in Action</h2>
+            <div class="trailer-frame-wrap">
+                <iframe
+                    src="https://www.youtube.com/embed/JgTzXOqSheo?rel=0"
+                    title="Pet Paint Official Trailer"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
 
         <section id="features" class="features-grid">
             <div class="feature-box">
@@ -247,10 +274,13 @@
             en: {
                 nav_back_portal: "← LIA Studio",
                 nav_home: "Home",
+                nav_trailer: "Trailer",
                 nav_features: "Features",
                 nav_lineup: "40 Templates",
                 nav_privacy: "Privacy Policy",
                 nav_terms: "Terms of Service",
+                trailer_tag: "Official Trailer",
+                trailer_heading: "Watch Pet Paint in Action",
                 hero_badge: "🎨 100% Free • Ages 3–5 • Interactive Coloring Playground",
                 hero_title: "Color Cute Pets & Watch Them<br><span class=\"highlight\">Come Alive in Your Playground!</span>",
                 hero_desc: "Designed specifically for toddlers aged 3–5 with a 100% No-Text interface. Color 40 adorable puppies, kittens, pet toys, weather, and garden friends using smart spill-free crayons, buckets, and stickers — then tap and play with every creation in a living meadow!",
@@ -277,10 +307,13 @@
             ko: {
                 nav_back_portal: "← LIA Studio",
                 nav_home: "홈",
+                nav_trailer: "공식 영상",
                 nav_features: "특징",
                 nav_lineup: "40종 도안",
                 nav_privacy: "개인정보처리방침",
                 nav_terms: "이용약관",
+                trailer_tag: "공식 트레일러",
+                trailer_heading: "펫 페인트 실제 플레이 영상",
                 hero_badge: "🎨 100% 무료 • 3~5세 유아 맞춤 • 인터랙티브 색칠 놀이터",
                 hero_title: "직접 색칠한 강아지·고양이가<br><span class=\"highlight\">살아 움직이는 마법 놀이터!</span>",
                 hero_desc: "글자를 몰라도 혼자 즐길 수 있는 100% 노텍스트(No-Text) 유아 색칠 앱! 선 밖으로 나가지 않는 스마트 크레파스·페인트통·스탬프로 40종의 강아지·고양이·펫 소품·날씨를 색칠하고, 살아 움직이는 초원에서 톡톡 놀아보세요!",
@@ -307,10 +340,13 @@
             ja: {
                 nav_back_portal: "← LIA Studio",
                 nav_home: "ホーム",
+                nav_trailer: "紹介動画",
                 nav_features: "特徴",
                 nav_lineup: "全40種の塗り絵",
                 nav_privacy: "プライバシーポリシー",
                 nav_terms: "利用規約",
+                trailer_tag: "公式トレーラー",
+                trailer_heading: "プレイ動画をチェック",
                 hero_badge: "🎨 完全無料 • 3〜5歳向け • インタラクティブ塗り絵＆ペット遊び場",
                 hero_title: "自分で塗った子犬・子猫が<br><span class=\"highlight\">草原で生き生きと動き出す！</span>",
                 hero_desc: "文字が読めなくても遊べる100%ノーテキスト幼児向け塗り絵アプリ！はみ出さないスマートクレヨン・バケツ・3Dスタンプで40種類のペットやおもちゃを塗って、不思議な草原でタップして遊ぼう！",
@@ -337,10 +373,13 @@
             "zh-CN": {
                 nav_back_portal: "← LIA Studio 官网",
                 nav_home: "首页",
+                nav_trailer: "宣传视频",
                 nav_features: "游戏特色",
                 nav_lineup: "40种涂色模板",
                 nav_privacy: "隐私政策",
                 nav_terms: "服务条款",
+                trailer_tag: "官方宣传片",
+                trailer_heading: "观看 Pet Paint 实机演示",
                 hero_badge: "🎨 100% 免费 • 3～5岁幼儿 • 互动涂色宠物乐园",
                 hero_title: "亲手涂色的小狗与小猫<br><span class=\"highlight\">在魔法草地上活灵活现！</span>",
                 hero_desc: "专为3～5岁幼儿打造的100%无文字界面！使用防越界智能蜡笔、油漆桶与3D贴纸为40种可爱宠物、玩具与天气上色，点击草地上的每件作品都能触发奇妙互动！",
@@ -367,10 +406,13 @@
             "zh-TW": {
                 nav_back_portal: "← LIA Studio 官網",
                 nav_home: "首頁",
+                nav_trailer: "宣傳影片",
                 nav_features: "遊戲特色",
                 nav_lineup: "40種著色範本",
                 nav_privacy: "隱私權政策",
                 nav_terms: "服務條款",
+                trailer_tag: "官方宣傳片",
+                trailer_heading: "觀看 Pet Paint 實機遊玩",
                 hero_badge: "🎨 100% 免費 • 3～5歲幼兒 • 互動著色寵物樂園",
                 hero_title: "親手著色的小狗與小貓<br><span class=\"highlight\">在魔法草地上活靈活現！</span>",
                 hero_desc: "專為3～5歲幼兒打造的100%無文字介面！使用防越界智慧蠟筆、油漆桶與3D貼紙為40種可愛寵物、玩具與天氣上色，點擊草地上的每件作品都能觸發奇妙互動！",
@@ -397,10 +439,13 @@
             de: {
                 nav_back_portal: "← LIA Studio",
                 nav_home: "Startseite",
+                nav_trailer: "Trailer",
                 nav_features: "Funktionen",
                 nav_lineup: "40 Vorlagen",
                 nav_privacy: "Datenschutz",
                 nav_terms: "Nutzungsbedingungen",
+                trailer_tag: "Offizieller Trailer",
+                trailer_heading: "Pet Paint in Aktion ansehen",
                 hero_badge: "🎨 100% Kostenlos • 3–5 Jahre • Interaktiver Mal- & Haustier-Spielplatz",
                 hero_title: "Male süße Haustiere aus und<br><span class=\"highlight\">erlebe, wie sie lebendig werden!</span>",
                 hero_desc: "Speziell für Kleinkinder von 3 bis 5 Jahren mit einer 100% textfreien Oberfläche. Male 40 niedliche Welpen, Kätzchen, Spielzeuge und Wetterfreunde aus und spiele mit ihnen auf der Wiese!",
@@ -427,10 +472,13 @@
             es: {
                 nav_back_portal: "← LIA Studio",
                 nav_home: "Inicio",
+                nav_trailer: "Tráiler",
                 nav_features: "Características",
                 nav_lineup: "40 Plantillas",
                 nav_privacy: "Privacidad",
                 nav_terms: "Términos",
+                trailer_tag: "Tráiler Oficial",
+                trailer_heading: "Mira Pet Paint en Acción",
                 hero_badge: "🎨 100% Gratis • 3–5 Años • Colorear y Parque de Mascotas",
                 hero_title: "¡Colorea lindas mascotas y<br><span class=\"highlight\">míralas cobrar vida al instante!</span>",
                 hero_desc: "Diseñado especialmente para niños de 3 a 5 años con una interfaz 100% sin texto. Colorea 40 adorables cachorros, gatitos, juguetes y elementos del clima, ¡y juega con cada creación en la pradera!",
@@ -457,10 +505,13 @@
             pt: {
                 nav_back_portal: "← LIA Studio",
                 nav_home: "Início",
+                nav_trailer: "Trailer",
                 nav_features: "Recursos",
                 nav_lineup: "40 Desenhos",
                 nav_privacy: "Privacidade",
                 nav_terms: "Termos",
+                trailer_tag: "Trailer Oficial",
+                trailer_heading: "Veja Pet Paint em Ação",
                 hero_badge: "🎨 100% Grátis • 3–5 Anos • Colorir e Parque de Pets",
                 hero_title: "Pinte pets fofos e veja cada um<br><span class=\"highlight\">ganhar vida no seu parque!</span>",
                 hero_desc: "Feito especialmente para crianças de 3 a 5 anos com interface 100% sem texto. Pinte 40 cachorrinhos, gatinhos, brinquedos e elementos da natureza com giz inteligente — e brinque com todos no jardim!",
