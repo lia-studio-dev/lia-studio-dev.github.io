@@ -301,6 +301,31 @@
             box-shadow: 0 14px 32px rgba(13, 148, 136, 0.45);
         }
 
+        /* Official Trailer Section */
+        .trailer-section {
+            padding: 3.5rem 0 4rem;
+            border-top: 1px solid var(--border-soft);
+            text-align: center;
+        }
+
+        .trailer-frame-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            aspect-ratio: 16 / 9;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 4px solid var(--surface-white);
+            box-shadow: var(--shadow-hover);
+            background: #112A24;
+        }
+
+        .trailer-frame-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
         /* Features Section */
         .features-grid {
             display: grid;
@@ -556,6 +581,7 @@
             </div>
 
             <div class="nav-links" id="navLinks">
+                <a href="#trailer" data-i18n="nav_trailer" onclick="closeMenu()">Trailer</a>
                 <a href="#features" data-i18n="nav_features" onclick="closeMenu()">Features</a>
                 <a href="#packages" data-i18n="nav_packages" onclick="closeMenu()">5 Packages</a>
                 <a href="privacy.html" data-i18n="nav_privacy" onclick="closeMenu()">Privacy Policy</a>
@@ -579,6 +605,24 @@
                 </a>
             </div>
         </header>
+
+        <!-- Official Trailer -->
+        <section id="trailer" class="trailer-section">
+            <div class="category-tag-center">
+                <span class="app-badge" data-i18n="trailer_tag">Official Trailer</span>
+            </div>
+            <h2 class="section-heading" data-i18n="trailer_heading">Watch Animal Jigsaw in Action</h2>
+            <div class="trailer-frame-wrap">
+                <iframe
+                    src="https://www.youtube.com/embed/WWSjBTYESbA?rel=0"
+                    title="Animal Jigsaw Official Trailer"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
 
         <!-- Features Grid -->
         <section id="features" class="features-grid">
@@ -715,10 +759,13 @@
                 lang_select_title: "Language",
                 nav_back_portal: "← LIA Studio",
                 nav_home: "Home",
+                nav_trailer: "Trailer",
                 nav_features: "Features",
                 nav_packages: "5 Packages",
                 nav_privacy: "Privacy Policy",
                 nav_terms: "Terms of Service",
+                trailer_tag: "Official Trailer",
+                trailer_heading: "Watch Animal Jigsaw in Action",
                 hero_badge: "✨ The Ultimate Wholesome Puzzle Playground for Kids",
                 hero_title: "Joyful Animal Friends &<br><span class=\"highlight\">Magical Jigsaw Adventures!</span>",
                 hero_desc: "Zero stress and failure-free (No-Fail) design tailored for children aged 3–6. Choose from 4 difficulty levels (4, 6, 12, 20 pieces) across 60 heartwarming storybook puzzles and celebrate with 10-second cinematic video rewards!",
@@ -752,10 +799,13 @@
                 lang_select_title: "언어 설정",
                 nav_back_portal: "← LIA Studio",
                 nav_home: "홈",
+                nav_trailer: "공식 영상",
                 nav_features: "특징",
                 nav_packages: "5대 패키지",
                 nav_privacy: "개인정보처리방침",
                 nav_terms: "이용약관",
+                trailer_tag: "공식 트레일러",
+                trailer_heading: "애니멀 직쏘 실제 플레이 영상",
                 hero_badge: "✨ 전 세계 어린이들을 위한 감성 가득 직쏘 놀이터",
                 hero_title: "폭신폭신 귀여운 동물들과<br><span class=\"highlight\">함께 떠나는 퍼즐 모험!</span>",
                 hero_desc: "실패와 스트레스가 없는(No-Fail) 3~6세 유아 맞춤 퍼즐. 연령 맞춤 4단계 난이도(4·6·12·20조각)와 60가지 고화질 동화 일러스트를 맞추고 10초 시네마틱 애니메이션 보상 영상을 감상해보세요!",
@@ -789,10 +839,13 @@
                 lang_select_title: "语言选择",
                 nav_back_portal: "← LIA Studio 官网",
                 nav_home: "首页",
+                nav_trailer: "宣传视频",
                 nav_features: "游戏特色",
                 nav_packages: "5大主题",
                 nav_privacy: "隐私政策",
                 nav_terms: "服务条款",
+                trailer_tag: "官方宣传片",
+                trailer_heading: "观看 Animal Jigsaw 实机演示",
                 hero_badge: "✨ 专为全球幼儿打造的纯净安心益智拼图",
                 hero_title: "与可爱动物小伙伴一起<br><span class=\"highlight\">展开梦幻拼图大冒险！</span>",
                 hero_desc: "专为 3～6 岁学龄前幼儿设计的零挫折感无压力拼图。提供 4 阶适龄难度（4、6、12、20块），完成 60 幅温馨精致的绘本拼图，即刻欣赏生动可爱的 10 秒动画奖励视频！",
@@ -826,10 +879,13 @@
                 lang_select_title: "語言選擇",
                 nav_back_portal: "← LIA Studio 官網",
                 nav_home: "首頁",
+                nav_trailer: "宣傳影片",
                 nav_features: "遊戲特色",
                 nav_packages: "5大主題",
                 nav_privacy: "隱私政策",
                 nav_terms: "服務條款",
+                trailer_tag: "官方宣傳片",
+                trailer_heading: "觀看 Animal Jigsaw 實機遊玩",
                 hero_badge: "✨ 專為全球幼兒打造的純淨安心益智拼圖",
                 hero_title: "與可愛動物小夥伴一起<br><span class=\"highlight\">展開夢幻拼圖大冒險！</span>",
                 hero_desc: "專為 3～6 歲學齡前幼兒設計的零挫折感無壓力拼圖。提供 4 階適齡難度（4、6、12、20片），完成 60 幅溫馨精緻的繪本拼圖，即刻欣賞生動可愛的 10 秒動畫獎勵影片！",
@@ -863,10 +919,13 @@
                 lang_select_title: "言語設定",
                 nav_back_portal: "← LIA Studio",
                 nav_home: "ホーム",
+                nav_trailer: "紹介動画",
                 nav_features: "特徴",
                 nav_packages: "5大テーマ",
                 nav_privacy: "プライバシー",
                 nav_terms: "利用規約",
+                trailer_tag: "公式トレーラー",
+                trailer_heading: "プレイ動画をチェック",
                 hero_badge: "✨ お子様のための心温まる安心知育パズル",
                 hero_title: "かわいい動物たちと<br><span class=\"highlight\">楽しいジグソーパズルの冒険へ！</span>",
                 hero_desc: "3〜6歳の幼児向けに設計された失敗のない優しいパズル。4段階の難易度（4・6・12・20ピース）から選んで、60枚の温かい絵本イラストを完成させ、10秒間の楽しいごほうびアニメーションを楽しもう！",
@@ -900,10 +959,13 @@
                 lang_select_title: "Sprache",
                 nav_back_portal: "← LIA Studio",
                 nav_home: "Start",
+                nav_trailer: "Trailer",
                 nav_features: "Funktionen",
                 nav_packages: "5 Welten",
                 nav_privacy: "Datenschutz",
                 nav_terms: "AGB",
+                trailer_tag: "Offizieller Trailer",
+                trailer_heading: "Animal Jigsaw in Aktion ansehen",
                 hero_badge: "✨ Liebevolles & sicheres Puzzle-Erlebnis für Kinder",
                 hero_title: "Fröhliche Tierfreunde &<br><span class=\"highlight\">magische Puzzle-Abenteuer!</span>",
                 hero_desc: "Frustfreies, liebevoll gestaltetes Design für Kinder von 3 bis 6 Jahren. Wähle aus 4 Schwierigkeitsstufen (4, 6, 12, 20 Teile) für 60 wunderschöne Bilderbuch-Puzzles und freue dich auf 10-sekündige animierte Belohnungsvideos!",
@@ -937,10 +999,13 @@
                 lang_select_title: "Idioma",
                 nav_back_portal: "← LIA Studio",
                 nav_home: "Inicio",
+                nav_trailer: "Tráiler",
                 nav_features: "Características",
                 nav_packages: "5 Paquetes",
                 nav_privacy: "Privacidad",
                 nav_terms: "Términos",
+                trailer_tag: "Tráiler Oficial",
+                trailer_heading: "Mira Animal Jigsaw en Acción",
                 hero_badge: "✨ El Parque de Rompecabezas más Tierno y Seguro",
                 hero_title: "¡Tiernos Animalitos y<br><span class=\"highlight\">Mágicas Aventuras de Puzles!</span>",
                 hero_desc: "Diseño sin estrés ni frustración (No-Fail) para niños de 3 a 6 años. Elige entre 4 dificultades (4, 6, 12, 20 piezas) en 60 hermosos rompecabezas ilustrados y disfruta de videos animados de recompensa de 10 segundos!",
@@ -974,10 +1039,13 @@
                 lang_select_title: "Idioma",
                 nav_back_portal: "← LIA Studio",
                 nav_home: "Início",
+                nav_trailer: "Trailer",
                 nav_features: "Recursos",
                 nav_packages: "5 Pacotes",
                 nav_privacy: "Privacidade",
                 nav_terms: "Termos",
+                trailer_tag: "Trailer Oficial",
+                trailer_heading: "Veja Animal Jigsaw em Ação",
                 hero_badge: "✨ O Playground de Quebra-Cabeças Perfeito para Crianças",
                 hero_title: "Amiguinhos Animais &<br><span class=\"highlight\">Aventuras Mágicas de Quebra-Cabeça!</span>",
                 hero_desc: "Desenvolvido sem estresse nem falhas para crianças de 3 a 6 anos. Escolha entre 4 níveis de dificuldade (4, 6, 12, 20 peças) em 60 quebra-cabeças ilustrados e comemore com vídeos animados de 10 segundos!",
